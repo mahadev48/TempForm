@@ -1,0 +1,58 @@
+<div class="container my-forms">
+	<form>
+		<h3>Add patent</h3>
+		<div class="form-group">
+			<label for="patentTitle" class="mt-4">Patent title</label>
+			<input type="text" class="form-control" id="patentTitle" name="pTitle"/>
+		</div>
+		<div class="form-group">
+			<label class="mt-2">Patent office</label>
+			<select class="dropdown-toggle form-control">
+				<option class="dropdown-item"></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="applicationNumber" class="mt-2">Patent or application number</label>
+			<input type="text" class="form-control" id="applicationNumber" name="appNumber"/>
+		</div>
+		<div class="form-group">
+			<label for="inventorName" class="mt-2">Inventor</label>
+			<input type="text" class="form-control mt-2 inventor" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inventor name" id="inventorName" name="inventorBox" /><hr/>
+			<p class="text-primary text-lg-right" style="font-size: 20px;">Add inventor</p>
+		</div>
+		<div class="form-group">
+			<label class="mt-2">Cause</label>
+			<div class="custom-control custom-radio form-group">
+			  <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
+			  <label class="custom-control-label" for="defaultChecked">Patent Pending</label>
+			</div>
+			<div class="custom-control custom-radio form-group">
+			  <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+			  <label class="custom-control-label" for="defaultUnchecked">Patent Issued</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="mt-2">Filing date</label><br/>
+				<select class="selectId">
+					<option>Month</option>
+				</select>
+				<select class="selectId">
+					<option>Day</option>
+				</select>	
+				<select class="selectId">
+					<option>Year</option>
+				</select>	
+		</div>
+		<div class="form-group">
+			<label for="patentUrl" class="mt-2">Patent URL</label>
+			<input type="URL" class="form-control" id="patentUrl"/>
+		</div>
+		<div class="form-group">
+			<label for="descriptionBox" class="mt-2">Description</label>
+			<textarea class="form-control" type="text" id="descriptionBox"></textarea>
+		</div>
+		<div class="text-right mt-5">
+			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+		</div>
+	</form>
+</div>

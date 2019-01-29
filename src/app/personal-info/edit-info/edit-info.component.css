@@ -1,0 +1,10 @@
+i{
+    color:#17a2b8 ;
+}
+/*#firstName,#lastName,#headLine,#edu,#country,#state,#city{
+	border: 2px solid gray;
+}*/
+#profileUrl{
+	width: 100%;
+	border:none;
+}

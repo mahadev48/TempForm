@@ -1,0 +1,67 @@
+<div class="container my-forms">
+	<h3 class="mt-5">Add project</h3>
+	<form>
+		<div class="form-group">
+			<label for="projectName" class="mt-4">Project name</label>
+			<input type="text" class="form-control" id="projectName"/>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div>Dates</div>
+				<label id="startDate" class="mt-2">Start date</label>
+				<select class="form-control" id="monthSelect">
+					<option>Month</option>
+				</select>
+			</div>
+			<div class="col"><br>
+				<label id="endDate" class="mt-2">End date</label>
+				<select class="form-control" id="monthSelect">
+					<option>Month</option>
+				</select>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col">
+				<select class="form-control" id="yearSelect">
+					<option>Year</option>
+				</select>
+			</div>
+			<div class="col">
+				<select class="form-control" id="yearSelect">
+					<option>Year</option>
+				</select>
+			</div>
+		</div>
+
+        <div class="form-check mt-4">
+		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+		    <label class="form-check-label" for="exampleCheck1">Project ongoing</label>
+		 </div>
+
+        <div class="form-group mt-2">
+		<p class="text-primary text-lg-right">Switch to single date</p>
+		</div>
+		<div class="form-group">
+			<label for="creatorId" class="mt-2">Creator</label>
+			<input type="text" class="form-control mt-2 creator" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creator name" id="creatorId"/><hr/>
+			<p class="text-primary text-lg-right">Add Creator</p>
+		</div>
+		<div class="form-group">
+			<label class="mt-2">Associated with</label>
+			<select class="dropdown-toggle">
+				<option class="dropdown-item"></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="patentUrl" class="mt-2">Patent URL</label>
+			<input type="URL" class="form-control" id="patentUrl"/>
+		</div>
+		<div class="form-group">
+			<label for="descriptionBox" class="mt-2">Description</label>
+			<textarea type="text" class="form-control" id="descriptionBox"></textarea>
+		</div>
+		<div class="text-right mt-5">
+			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+		</div>
+	</form>
+</div>

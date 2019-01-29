@@ -1,0 +1,71 @@
+<div class="container my-forms">
+  <form  #experienceForm="ngForm" (ngSubmit)="onSubmit(experienceForm)">
+    <h3>Add Experience</h3>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" type="text" name="title" id="title" placeholder="Ex.Manager" required [(ngModel)]="experience.title" #fTitle="ngModel">
+      <span *ngIf="(fTitle.touched && !fTitle.valid) || (experienceForm.submitted && !fTitle.valid)" class="text-danger" style="font-size:12px;">Title can't be blank
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <input type="text" class="form-control" name="role" id="role" placeholder="Ex.Microsoft" required [(ngModel)]="experience.role" #tRoles="ngModel">
+      <span *ngIf="(tRoles.touched && !tRoles.valid) || (experienceForm.submitted && !tRoles.valid)" class="text-danger" style="font-size:12px;">Required Fields
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select name="location" id="location" class="form-control">
+        <option value="1" selected *ngFor="let location of locationList">{{location}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="from-year">From</label>
+          <select class="form-control" name="month" id="monthYear">
+            <option>Month</option>
+            <option *ngFor="let month of monthList">{{month}}</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="to-year">Present</label>
+          <select class="form-control" name="year" id="monthYear">
+            <option>Year</option>
+            <option *ngFor="let year of yearsList">{{year}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <!-- check list -->
+    <div class="form-check ">
+      <input type="checkbox" class="form-check-input" id="check-role" value="option 1">
+      <label class="form-check-label" for="check-role"> I currently work in this role</label>
+    </div>
+
+    <div class="form-check ">
+      <input class="form-check-input" type="checkbox" id="check-updt-industry" value="option 2">
+      <label class="form-check-label" for="check-updt-industry">Update my Industry</label>
+    </div>
+
+    <div class="form-check ">
+      <input class="form-check-input" type="checkbox" id="check-headline" value="option 3">
+      <label class="form-check-label" for="check-headline"> Update Description</label>
+    </div>
+
+    <div class="form-group mt-2">
+      <label for="headline">Headline</label>
+      <input class="form-control" type="text" name="headline" id="headline" placeholder="Head line..." required [(ngModel)]="experience.headline" #fHeadline="ngModel">
+      <span *ngIf="(fHeadline.touched && !fHeadline.valid) || (experienceForm.submitted && !fHeadline.valid)" class="text-danger" style="font-size: 12px;">Required Fields</span>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="3"></textarea>
+    </div>
+      <button class="btn btn-primary float-right" type="submit">Save</button>
+  </form>
+</div>

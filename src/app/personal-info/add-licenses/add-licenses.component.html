@@ -1,0 +1,59 @@
+<div class="container my-forms">
+  <form>
+      <h3>Add licenses & certifications</h3>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" id="name" type="text" placeholder="Ex. Cisco Certified Newtork Associate Security (CCNA)">
+      </div>
+
+      <div class="form-group">
+        <label for="issue">Issueing Organization</label>
+        <input class="form-control" id="issue" type="text" placeholder="Ex.Cisco">
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="monthSelect">Issue Data</label>
+          <select name="monthSelect" id="monthSelect" class="form-control">
+            <option value="1">month</option>
+            <option value="2">1</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="monthSelect1">Exper Data</label>
+          <select name="monthSelect1" id="monthSelect1" class="form-control">
+            <option value="1">month</option>
+            <option value="2">1</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col ">
+          <select name="yearSelect" id="yearSelect" class="form-control">
+            <option value="1">Year</option>
+            <option value="2">1</option>
+          </select>
+        </div>
+        <div class="col ">
+          <select name="yearSelect1" id="yearSelect1" class="form-control">
+            <option value="1">Year</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-checkbox mt-1">
+        <input type="checkbox" class="form-check-input" id="check-exp">
+        <label class="form-check-label text-muted" for="check-exp">This certification does not expire</label>
+      </div>
+      
+      <div class="form-group mt-4">
+        <label for="credId">Credential ID</label>
+        <input class="form-control" id="credId" placeholder="Ex. Cisco Certified Network Associate Security (CCNA)">
+      </div>
+      <div class="form-group">
+        <label for="credUrl">Credential URL</label>
+        <input class="form-control" id="credUrl" placeholder="Ex. Cisco">
+      </div>
+      <button class="btn btn-primary float-right" type="submit">Save</button>
+  </form>
+</div>

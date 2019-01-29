@@ -1,0 +1,138 @@
+<div class="container">
+<form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+<div class="my-forms">
+  <h3>Edit Info</h3>
+<!-- input text first Name -->
+  <div class="row justify-content-between">
+    <div class="col">
+      <label for="firstName">First name</label>
+      <input type="text" class="form-control" id="firstName" placeholder="First Name" required 
+      [(ngModel)]="user.firstName" name="firstName" #tfirstName="ngModel">
+      <span *ngIf="(tfirstName.touched && !tfirstName.valid) || (userform.submitted && !tfirstName.valid)"
+                         class="text-danger" style="font-size:12px;">First name can't be blank</span>
+    </div>
+<!-- input last Name -->
+    <div class="col ">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Last Name"required 
+      [(ngModel)]="user.lastName" name="lastName" #tlastName="ngModel">
+      <span *ngIf="(tlastName.touched && !tlastName.valid) || (userform.submitted && !tlastName.valid)"
+                         class="text-danger" style="font-size:12px;">Last name can't be blank</span>
+      <a class="text-info float-right"><span class="fa fa-plus"></span>Add former name</a>
+    </div>
+  </div>
+
+  <!-- select headline -->
+  <div class="form-group">
+    <label> Headline</label>
+    <textarea class="form-control mb-2" name="headLine" id="headLine"  placeholder="First Name"  [(ngModel)]="user.headLine" #theadLine="ngModel" required #theadLine="ngModel"></textarea>
+    <span *ngIf="(theadLine.touched && !theadLine.valid) || (userform.submitted && !theadLine.valid)"
+    class="text-danger" style="font-size:12px;">Fill in Head Line Section</span>
+    <br>
+    <a class="text-info "> <span class="fa fa-plus"></span> Add current postion</a>
+  </div>
+
+  <!-- select education  -->
+  <div class="form-group">
+    <label for="edu">Education</label>
+    <select name="eduSelect" id="edu" class="form-control" [(ngModel)]="user.selectEdu" required #tedu="ngModel">
+      <option value="1">First option</option>
+    </select>
+    <span *ngIf="(tedu.touched && !tedu.valid) || (userform.submitted && !tedu.valid)" class="text-danger" style="font-size:12px;"> Need to select an option.</span> 
+    <a class="text-info float-right"><span class="fa fa-plus"></span>Add new education</a>
+  </div>
+
+  <!--checkbox  -->
+  <div class="form-check">
+    <input type="checkbox" id="checkShow" class="form-check-input">
+    <label for="checkShow" class="form-check-label">Show above education in my bio</label>
+  </div>
+
+
+  <div class="row form-group mt-5">
+
+    <div class="col">
+      <label for="country">Country/Region</label>
+      <select name="countrySelect" id="country" class="form-control" required [(ngModel)]="user.country" #tcountrySelect="ngModel" >
+        <option value="1">India</option>
+        <option value="2">United States</option>
+        <option value="3">United Kingdom</option>
+      </select>
+      <span *ngIf="(tcountrySelect.touched && !tcountrySelect.valid) || (userform.submitted && !tcountrySelect.valid)"    
+                            class="text-danger" 
+                            style="font-size:12px;"> Need to select an option.</span> 
+    </div>
+
+    <div class="col">
+      <label for="State">Province/State</label>
+      <select name="stateSelect" id="state" class="form-control" required [(ngModel)]="user.state" #tstateSelect="ngModel">
+        <option value="1" selected>Maharastra</option>
+        <option value="2">Karanataka</option>
+      </select>
+      <span *ngIf="(tstateSelect.touched && !tstateSelect.valid) || (userform.submitted && !tstateSelect.valid)"    
+      class="text-danger" 
+      style="font-size:12px;"> Need to select an option.</span>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="city">City/District</label>
+    <select name="citySelect" id="city" class="form-control" required [(ngModel)]="user.city" #tcitySelect="ngModel"> 
+      <option value="1">Nagpur</option>
+      <option value="2">Banglore</option>
+    </select>
+
+    <span *ngIf="(tcitySelect.touched && !tcitySelect.valid) || (userform.submitted && !tcitySelect.valid)"    
+    class="text-danger" 
+    style="font-size:12px;"> Need to select an option.</span>
+
+  </div>
+
+  <div class="form-group">
+    <label for="industry">Industry</label>
+    <select name="industrySelect" id="industry" class="form-control" required [(ngModel)]="user.industry" #tindustrySelect="ngModel">
+      <option value="1" selected >Animation</option>
+    </select>
+    
+    <span *ngIf="(tcitySelect.touched && !tcitySelect.valid) || (userform.submitted && !tcitySelect.valid)"    
+    class="text-danger" 
+    style="font-size:12px;"> Need to select an option.</span>
+    
+  </div>
+  <br>
+  <div>
+    <!-- not sure about this component, need more detail -->
+    <label class="text-secondary">Profile URL, Phone, Email, Birthday</label>
+    <i class="fa fa-pencil float-right "></i>
+    <hr>
+  </div>
+<div class="form-group">
+  <label for="summary">Summary</label>
+  <textarea id="summary" name="summary" class="form-control" placeholder="Say something..." required  [(ngModel)]="user.summary" #tsummary="ngModel"></textarea>
+  
+  <span *ngIf="(tsummary.touched && !tsummary.valid) || (userform.submitted && !tsummary.valid)"    
+    class="text-danger" 
+    style="font-size:12px;"> Need to select an option.</span>
+</div>
+  <div class="form-group mt-3"> 
+     <label for="uploadForm" >Media </label>
+  <br>
+      <small id="uploadForm" class="text-muted">Add or link to external document photos, videos and
+        presentations </small>
+    
+  </div>
+  
+
+  <div class="row justify-content-start ">
+    <div class="col-2"><button class="btn btn-outline-primary">UPLOAD</button></div>
+    <div class="col-1"><button class="btn btn-outline-secondary">LINK</button></div>
+  </div>
+
+
+  <button class="btn btn-primary float-right" type="submit">Submit</button>
+
+
+</div>
+</form>
+</div>

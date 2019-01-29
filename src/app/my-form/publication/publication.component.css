@@ -1,0 +1,27 @@
+h3,label{
+	font-family:"Arial";
+}
+textarea{
+	padding:5px 5px 150px;
+}
+#exampleId{
+	font-family: sans-serif;
+	font-style: italic;
+	color: gray;
+}
+/*#inputTitle,#inputPublication,#inputUrl{
+	border: 2px solid gray;
+}*/
+#description{
+	/*border: 2px solid gray;*/
+	height: 140px
+}
+.selectId{
+	/*border: 2px solid gray;*/
+	font-family:"Arial";
+	color: gray;
+	border-radius: 5px;
+}
+#saveBtn{
+	font-family:"Arial";
+}

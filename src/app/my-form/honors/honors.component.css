@@ -1,0 +1,30 @@
+h3,label{
+	font-family:"Arial";
+}
+/*#titleSelect,#issuerId{
+	border: 2px solid gray;
+}*/
+.dropdown-toggle{
+	width: 100%;
+	/*border: 2px solid gray;*/
+	font-size:16px;
+	font-family:"Arial";
+	border-radius: 5px;
+	height: 40px;
+}
+#monthSelect,#yearSelect{
+	/*border: 2px solid gray;*/
+	font-size:16px;
+	font-family:"Arial";
+	border-radius: 5px;
+}	
+
+#descriptionBox{
+	height: 140px;
+	width: 100%;
+	/*border: 2px solid gray;*/
+	font-family:"Arial"; 
+}
+#saveBtn{
+	font-family:"Arial";
+}

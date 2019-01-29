@@ -1,0 +1,41 @@
+<div class="container my-forms">
+	<form (ngSubmit)="onSubmit(ftitle)"
+	 #ftitle="ngForm">
+		<h3>Add publication</h3>
+		<div class="form-group">
+			<label for="inputTitle" class="mt-4">Title</label>
+			<input type="text" class="form-control" id="inputTitle" [(ngModel)]="addPublication.title" name="publication" required #publication="ngModel" />
+			<span *ngIf="(!publication.valid && publication.touched) || (ftitle.submitted && !publication.valid)" class="text-danger">Required Field</span><br>
+			<small id="exampleId">Ex: Giving and receiving feedback</small>
+		</div>
+		<div class="form-group">
+			<label for="inputPublication">Publication/Publisher</label>
+			<input type="text" class="form-control" id="publication" name="publication" required #pPublication="ngModel" [(ngModel)]="addPublication.publication"/>
+			<span *ngIf="(!pPublication.valid && pPublication.touched) || (ftitle.submitted && !publication.valid)" class="text-danger">Required Field</span><br>
+			<small id="exampleId">Ex: Harvard Business Review</small>
+		</div>
+		<div class="form-group">
+			<label class="mt-2">Publication date</label><br>
+			<select class="selectId">
+				<option>Month</option>
+			</select>
+			<select class="selectId" style="margin-left: 10px;">
+				<option>Day</option>
+			</select>	
+			<select class="selectId" style="margin-left: 10px;">
+				<option>Year</option>
+			</select>	
+		</div>
+		<div class="form-group">
+			<label for="inputUrl" class="mt-2">Publication URL</label>
+			<input type="text" class="form-control" id="inputUrl"/>
+		</div>
+		<div class="form-group">
+			<label for="description" class="mt-2">Description</label>
+			<textarea type="text" class="form-control" id="description"></textarea>
+		</div>
+		<div class="text-right mt-5">
+			<button type="submit" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+		</div>
+	</form>
+</div>
