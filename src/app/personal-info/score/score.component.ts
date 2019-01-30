@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./score.component.css']
 })
 export class ScoreComponent implements OnInit {
-
+score={testName:'',associatedId:'',scoreBox:'',descriptionBox:''};
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit(){}
 }

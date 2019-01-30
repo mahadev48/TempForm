@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddOrganizationComponent implements OnInit {
 
+  organization={ 'name':'',
+    'post':'',
+    'associat':'',
+    'monthSelect':[],
+    'monthSelect1':[],
+    'yearSelect':[],
+    'yearSelect1':[],
+    'checkMember':true,
+    'descri':''
+
+
+
+  };
   constructor() { }
 
   ngOnInit() {

@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-organization.component.css']
 })
 export class AddOrganizationComponent implements OnInit {
-
+  
+  organization={ 'name':'',
+  'post':'',
+  'associat':'',
+  'monthSelect':[],
+  'monthSelect1':[],
+  'yearSelect':[],
+  'yearSelect1':[],
+  'checkMember': false,
+  'descri':''
+};
   constructor() { }
 
   ngOnInit() {
+  }
+  onSubmit(){
+
   }
 
 }

@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageComponent implements OnInit {
 
+  language={lang:'',proficiency:''};
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit(){}
 }

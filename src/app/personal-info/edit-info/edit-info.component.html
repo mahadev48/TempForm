@@ -20,7 +20,7 @@
     </div>
 
     <!-- select headline -->
-    <div class="form-group">
+    <div class="form-group mt-4">
       <label> Headline</label>
       <textarea class="form-control mb-2" name="headLine" id="headLine"  placeholder="Headline"  [(ngModel)]="user.headLine" #theadLine="ngModel" required #theadLine="ngModel"></textarea>
       <span *ngIf="(theadLine.touched && !theadLine.valid) || (userform.submitted && !theadLine.valid)"

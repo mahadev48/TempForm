@@ -11,13 +11,7 @@ export class EditInfoComponent implements OnInit {
         headLine:'', selectEdu:'',
         checkShow:'', country:'',
         state:'', city:'',
-        industry:'',summary:'',
-
-
-        
-      
-  
-  
+        industry:'',summary:''  
     
   };
   constructor() { }
