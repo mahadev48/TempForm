@@ -3,13 +3,20 @@
     <h3>Add Volunteer & experience</h3>
     <div class="form-group">
       <label for="organi">Organization</label>
-      <input class="form-control" type="text" name="organi" id="organi"  required
-                                                            [(ngModel)]="experience.organi"
-                                                              #torgani="ngModel">
+      <input class="form-control" type="text" name="organi" id="organi"  required [(ngModel)]="experience.organi" #torgani="ngModel">
 
       <span *ngIf="(torgani.touched && !torgani.valid) 
                    || (experiencForm.submitted && !torgani.valid)"
                    class="text-danger" style="font-size:12px;">
+                   Field can't be blank</span>
+
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <input type="text" class="form-control" name="role" id="role" required [(ngModel)]="experience.role" #trole="ngModel">
+        
+      <span *ngIf="(trole.touched && !trole.valid) || (experiencForm.submitted && !trole.valid)" class="text-danger" style="font-size:12px;">
                    Field can't be blank</span>
 
     </div>
@@ -19,12 +26,12 @@
       <label for="cause">Cause</label>
       <select class="form-control" name="cause" id="cause" required
                                                           [(ngModel)]="experience.cause"
-                                                          #trole="ngModel">>
+                                                          #tcause="ngModel">
         <option >Teaching underprivileged kids</option>
       </select>
 
-      <span *ngIf="(trole.touched && !trole.valid) 
-                   || (experiencForm.submitted && !trole.valid)"
+      <span *ngIf="(tcause.touched && !tcause.valid) 
+                   || (experiencForm.submitted && !tcause.valid)"
                    class="text-danger" style="font-size:12px;">
                    Field can't be blank</span>
 
@@ -33,9 +40,7 @@
     <div class="row">
       <div class="col">
         <label for="monthSelect">Start Data</label>
-        <select name="monthSelect" id="monthSelect" class="form-control"  name="monthSelect" required 
-                                                                                            #tmonthSelect="ngModel"
-                                                                                            [(ngModel)]="experience.monthSelect">
+        <select name="monthSelect" id="monthSelect" class="form-control"  name="monthSelect" required  #tmonthSelect="ngModel" [(ngModel)]="experience.monthSelect">
           <option value="1">month</option>
           <option value="2">1</option>
         </select>
@@ -48,9 +53,7 @@
       </div>
       <div class="col">
         <label for="monthSelect1">End Data</label>
-        <select name="monthSelect1" id="monthSelect1" class="form-control" name="monthSelect1" required
-                                                                                               #tmonthSelect1="ngModel" 
-                                                                                              [(ngModel)]="experience.monthSelect1">
+        <select name="monthSelect1" id="monthSelect1" class="form-control" name="monthSelect1" required                                      #tmonthSelect1="ngModel"          [(ngModel)]="experience.monthSelect1">
           <option value="1">month</option>
           <option value="2">1</option>
         </select>

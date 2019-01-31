@@ -1,43 +1,63 @@
 <div class="container my-forms">
-  <form>
+  <form #licensesForm="ngForm" novalidate (ngSubmit)="onSubmit(licensesForm)">
       <h3>Add licenses & certifications</h3>
       <div class="form-group">
         <label for="name">Name</label>
-        <input class="form-control" id="name" type="text" placeholder="Ex. Cisco Certified Newtork Associate Security (CCNA)">
+        <input class="form-control" id="name" type="text" placeholder="Ex. Cisco Certified Newtork Associate Security (CCNA)" required 
+        [(ngModel)]="licenses.name" name="name" #tname="ngModel">
+        
+        <span *ngIf="(tname.touched && !tname.valid) 
+        || (licensesForm.submitted && !tname.valid)"
+        class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
+
       </div>
 
       <div class="form-group">
         <label for="issue">Issueing Organization</label>
-        <input class="form-control" id="issue" type="text" placeholder="Ex.Cisco">
+        <input class="form-control" id="issue" type="text" placeholder="Ex.Cisco" required [(ngModel)]="licenses.issue" name="issue" #tissue="ngModel">
+        <span *ngIf="(tissue.touched && !tissue.valid) || (licensesForm.submitted && !tissue.valid)" class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
       </div>
       <div class="row">
         <div class="col">
           <label for="monthSelect">Issue Data</label>
-          <select name="monthSelect" id="monthSelect" class="form-control">
+          <select name="monthSelect" id="monthSelect" class="form-control" required [(ngModel)]="licenses.monthSelect" name="monthSelect" #tmonthSelect="ngModel">
             <option value="1">month</option>
             <option value="2">1</option>
           </select>
+          <span *ngIf="(tmonthSelect.touched && !tmonthSelect.valid) 
+          || (licensesForm.submitted && !tmonthSelect.valid)"
+          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
         </div>
         <div class="col">
           <label for="monthSelect1">Exper Data</label>
-          <select name="monthSelect1" id="monthSelect1" class="form-control">
+          <select name="monthSelect1" id="monthSelect1" class="form-control" required [(ngModel)]="licenses.monthSelect1" name="monthSelect1" #tmonthSelect1="ngModel">
             <option value="1">month</option>
             <option value="2">1</option>
           </select>
+          <span *ngIf="(tmonthSelect1.touched && !tmonthSelect1.valid) || (licensesForm.submitted && !tmonthSelect1.valid)"          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
         </div>
       </div>
 
       <div class="row mt-2">
         <div class="col ">
-          <select name="yearSelect" id="yearSelect" class="form-control">
+          <select id="yearSelect" class="form-control" required  [(ngModel)]="licenses.yearSelect" name="yearSelect" #tyearSelect="ngModel" >
             <option value="1">Year</option>
             <option value="2">1</option>
           </select>
+
+          <span *ngIf="(tyearSelect.touched && !tyearSelect.valid) || (licensesForm.submitted && !tyearSelect.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
         </div>
         <div class="col ">
-          <select name="yearSelect1" id="yearSelect1" class="form-control">
+          <select  id="yearSelect1" class="form-control" required [(ngModel)]="licenses.yearSelect1" name="yearSelect1" #tyearSelect1="ngModel">
             <option value="1">Year</option>
           </select>
+          
+          <span *ngIf="(tyearSelect1.touched && !tyearSelect1.valid) || (licensesForm.submitted && !tyearSelect1.valid)" class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
         </div>
       </div>
 
@@ -48,11 +68,19 @@
       
       <div class="form-group mt-4">
         <label for="credId">Credential ID</label>
-        <input class="form-control" id="credId" placeholder="Ex. Cisco Certified Network Associate Security (CCNA)">
+        <input class="form-control" id="credId" placeholder="Ex. Cisco Certified Network Associate Security (CCNA)" required [(ngModel)]="licenses.credId" name="credId" #tcredId="ngModel">
+
+        <span *ngIf="(tcredId.touched && !tcredId.valid) || (licensesForm.submitted && !tcredId.valid)" class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
+
       </div>
       <div class="form-group">
         <label for="credUrl">Credential URL</label>
-        <input class="form-control" id="credUrl" placeholder="Ex. Cisco">
+        <input class="form-control" id="credUrl" placeholder="Ex. Cisco" required [(ngModel)]="licenses.credUrl" name="credUrl" #tcredUrl="ngModel">
+
+        <span *ngIf="(tcredUrl.touched && !tcredUrl.valid) || (licensesForm.submitted && !tcredUrl.valid)" class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
+       
       </div>
       <button class="btn btn-primary float-right" type="submit">Save</button>
   </form>

@@ -45,7 +45,7 @@
 	</div>
 		<div class="form-group">
 			<label for="descriptionBox" class="mt-2">Description</label>
-			<textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="descriptionBox"></textarea>
+			<textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="score.descriptionBox"></textarea>
 			<span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) 
                    	  || (scoreform.submitted && !tdescriptionBox.valid)"
                    class="text-danger" style="font-size:12px;">
