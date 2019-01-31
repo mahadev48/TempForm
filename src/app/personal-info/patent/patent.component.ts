@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatentComponent implements OnInit {
 
+  patent={'patentTitle':'',
+          'patentOffice':'',
+        'applicationNumber':'',
+        'inventorName':'',
+        'descriptionBox':''};
   constructor() { }
 
   ngOnInit() {
   }
+  onSubmit(){}
 
 }

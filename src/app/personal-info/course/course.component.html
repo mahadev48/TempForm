@@ -1,23 +1,45 @@
 <div class="container my-forms">
-	<form>
+	<form #courseForm="ngForm" novalidate (ngSubmit)="onSubmit(courseForm)" >
 		<h3>Add course</h3>
 		<div class="form-group">
 			<label for="courseName" class="mt-4">Course name</label>
-			<input type="text" class="form-control" id="courseName"/>
+			<input type="text" class="form-control" id="courseName" name="courseName" required 
+																	#tcourseName="ngModel" 
+																	[(ngModel)]="course.courseName"/>
+			
+			<span *ngIf="(tcourseName.touched && !tcourseName.valid) 
+			|| (courseForm.submitted && !tcourseName.valid)"
+			class="text-danger" style="font-size:12px;">
+			Field can't be blank</span>
 		</div>
 		<div class="form-group">
 			<label for="numberId" class="mt-2">Number</label>
-			<input type="text" class="form-control" id="numberId"/>
+			<input type="text" class="form-control" id="numberId"name="numberId"
+																 required
+																[(ngModel)]="course.numberId"
+																#tnumberId="ngModel"/>
+
+			<span *ngIf="(tnumberId.touched && !tnumberId.valid) 
+			|| (courseForm.submitted && !tnumberId.valid)"
+			class="text-danger" style="font-size:12px;">
+			Field can't be blank</span>
 		</div>
 		<div class="form-group">
 			<label for="associatedId" class="mt-2">Associated with</label>
-			<select class="dropdown-toggle" id="associatedId">
+			<select class="dropdown-toggle" id="associatedId" required
+			[(ngModel)]="course.associatedId"
+			 name="associatedId"
+			  #tassociatedId="ngModel">
 				<option class="dropdown-item"></option>
 				<option></option>
 			</select>
+			<span *ngIf="(tassociatedId.touched && !tassociatedId.valid) 
+			|| (courseForm.submitted && !tassociatedId.valid)"
+			class="text-danger" style="font-size:12px;">
+			Field can't be blank</span>
 		</div>
 		<div class="text-right mt-5">
-			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+			<button class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
 		</div>
 	</form>
 </div>

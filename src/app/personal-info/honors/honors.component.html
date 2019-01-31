@@ -1,41 +1,66 @@
 <div class="container my-forms">
-	<form>
-		<h3>Add honors & awards</h3>
-		<div class="form-group">
-			<label for="titleSelect" class="mt-4">Title</label>
-			<input type="text" class="form-control" id="titleSelect"/>
-		</div>
-		<div class="form-group">
-			<label for="associatedId" class="mt-2">Associated with</label>
-			<select class="dropdown-toggle" id="associatedId">
-				<option class="dropdown-item"></option>
-				<option></option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="issuerId" class="mt-2">Issuer</label>
-			<input type="text" class="form-control" id="issuerId"/>
-		</div>
-		<div class="row">
-		</div>
-		<div class="row">
-			<div class="col">
-				<select class="form-control" id="monthSelect">
-					<option>Month</option>
-				</select>
-			</div>
-			<div class="col">
-				<select class="form-control" id="yearSelect">
-					<option>Year</option>
-				</select>
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="descriptionBox" class="mt-2">Description</label>
-			<textarea type="text" class="form-control" id="descriptionBox"></textarea>
-		</div>
-		<div class="text-right mt-5">
-			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
-		</div>	
-	</form>
+  <form #honorsform="ngForm" novalidate (ngSubmit)="onSubmit(honoursForm)">
+    <h3>Add honors & awards</h3>
+    <div class="form-group">
+      <label for="title" class="mt-4">Title</label>
+      <input type="text" class="form-control" id="title" name="title" required #ttitle='ngModel' [(ngModel)]="honors.title" />
+      <span *ngIf="(ttitle.touched && !ttitle.valid) 
+                   || (honorsform.submitted && !ttitle.valid)"
+        class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
+    </div>
+    <div class="form-group">
+      <label for="associatedId" class="mt-2">Associated with</label>
+      <select class="dropdown-toggle" id="associatedId" name="associatedId" required #tassociatedId="ngModel"
+        [(ngModel)]="honors.associatedId">
+        <option class="dropdown-item"></option>
+        <option></option>
+      </select>
+      <span *ngIf="(tassociatedId.touched && !tassociatedId.valid) 
+                   || (honorsform.submitted && !tassociatedId.valid)"
+        class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
+    </div>
+    <div class="form-group">
+      <label for="issuer" class="mt-2">Issuer</label>
+      <input type="text" class="form-control" id="issuer" name="issuer" required #tissuer="ngModel" [(ngModel)]="honors.issuer" />
+
+      <span *ngIf="(tissuer.touched && !tissuer.valid) 
+                   || (honorsform.submitted && !tissuer.valid)"
+        class="text-danger" style="font-size:12px;">
+        Field can't be blank</span>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <select class="form-control" id="monthSelect" name="monthSelect" required #tmonthSelect="ngModel" [(ngModel)]="honors.monthSelect">
+		  <option>Month</option>
+		  <option> Month2</option>
+        </select>
+        <span *ngIf=" (tmonthSelect.touched && !tmonthSelect.valid ) || ( honorsform.submitted  && !tmonthSelect.valid)"
+          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
+      </div>
+      <div class="col">
+        <select class="form-control" id="yearSelect" name="yearSelect" required #tyearSelect="ngModel" [(ngModel)]="honors.yearSelect">
+          <option selected>Year</option>
+        </select>
+        <span *ngIf="(tyearSelect.touched && !tyearSelect.valid) 
+                   || (honorsform.submitted && !tyearSelect.valid)"
+          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descriptionBox" class="mt-2">Description</label>
+	  <textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="honors.descriptionBox"></textarea>
+	  <span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) 
+                   || (honorsform.submitted && !tdescriptionBox.valid)"
+          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
+    </div>
+    <div class="text-right mt-5">
+      <button class="btn btn-primary btn-md"><strong>Save</strong></button>
+    </div>
+  </form>
 </div>
