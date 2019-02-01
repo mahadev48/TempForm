@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddVolunteerExperienceComponent implements OnInit {
 
+    experience={
+      'organi':'',
+      'role':'',
+      'cause':'',
+      'monthSelect':'',
+      'monthSelect1':'',
+      'yearSelect':'',
+      'yearSelect1':'',
+      'descri':'',
+    };
   constructor() { }
 
   ngOnInit() {
   }
+  onSubmit(){
 
+      }
 }

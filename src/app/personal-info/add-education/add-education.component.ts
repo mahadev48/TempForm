@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EducationService } from '../services/education.service';
+import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-education',
@@ -7,21 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEducationComponent implements OnInit {
 
-	schoolList = [''];
-	degreeList = [''];
-	studyFieldList = [''];
-	gradeList = [''];
-	yearList = ['2000', '2001', '2002'];
-	toYear = ['2000', '2001', '2002'];
+	education = {
+				'school':'',
+				'degree':'',
+				'studyField':'',
+				'grade':'',
+				'activities':'',
+				'years':['2000', '2001', '2002'],
+				'toYears':['2000', '2001', '2002'],
+				'description':''
+				};
+	educationData = {};			
 
-  	constructor() { }
+  	constructor(private educationService: EducationService) { }
 
 	  ngOnInit() {
 
 	  }
 
-	  onSubmit(){
-
+	  onSubmit(educationForm: NgForm){
+	  	this.educationData = educationForm.value;
+	  	console.log(educationForm);
+	  	this.educationService.educationCreate(this.educationData).subscribe(
+	  		res =>{
+	  			console.log(res);
+	  		},
+	  		err =>{
+	  			console.log(err);
+	  		});
 	  }
 
 }

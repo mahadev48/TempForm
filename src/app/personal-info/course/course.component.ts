@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
+    course={
+      'courseName':'',
+      'numberId':'',
+      'associatedId':''
+    }
   constructor() { }
 
   ngOnInit() {
+  }
+  onSubmit(){
+    
   }
 
 }

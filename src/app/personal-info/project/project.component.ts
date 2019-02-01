@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
+  project= { 'projectName':'',
+              'startDate':'',
+              'endDate':'',
+              'monthSelect':'',
+              'monthSelect1':'',
+              'yearSelect':'',
+              'yearSelect1':'',
+              'dropdownToggle':'',
+              'descriptionBox': ''
+
+              
+
+
+  };
   constructor() { }
 
   ngOnInit() {

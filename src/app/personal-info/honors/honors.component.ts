@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./honors.component.css']
 })
 export class HonorsComponent implements OnInit {
+  honors={ 'title':'',
+  'associatedId':[],
+  'issuerId':'',
+  'issuer':'',
+  'yearSelect':[],
+  'monthSelect':[],
 
-  constructor() { }
+  'descriptionBox':''
+};
+  constructor() {
+
+  }
 
   ngOnInit() {
+  }
+  
+  onSubmit(){
+
   }
 
 }

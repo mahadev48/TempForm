@@ -1,36 +1,58 @@
 <div class="container my-forms">
-	<form>
+	<form #scoreform="ngForm" novalidate (ngSubmit)="onSubmit(scoreform)">
 		<h3>Add test score</h3>
 		<div class="form-group">
-			<label for="textName" class="mt-4">Test name</label>
-			<input type="text" class="form-control" id="textName"/>
+			<label for="testName" class="mt-4">Test name</label>
+			<input type="text" class="form-control" name="testName" id="testName" required #ttestName="ngModel" [(ngModel)]="score.testName"/>
+			<span *ngIf="(ttestName.touched && !ttestName.valid) 
+			|| (scoreform.submitted && !ttestName.valid)"
+                   class="text-danger" style="font-size:12px;">
+                   Field can't be blank</span>
 		</div>
 		<div class="form-group">
 			<label for="associatedId" class="mt-2">Associated with</label>
-			<select class="dropdown-toggle" id="associatedId">
-				<option class="dropdown-item"></option>
-				<option></option>
+			<select class="dropdown-toggle" id="associatedId" name="associatedId" required #tassociatedId="ngModel" [(ngModel)]="score.associatedId">
+				<option class="dropdown-item">yolo</option>
+				<option class="dropdown-item">yolo2</option>
 			</select>
+			<span *ngIf="(tassociatedId.touched && !tassociatedId.valid) 
+                   	  || (scoreform.submitted && !tassociatedId.valid)"
+                   class="text-danger" style="font-size:12px;">
+                   Field can't be blank</span>
 		</div>
 		<div class="form-group">
 			<label for="scoreBox" class="mt-2">Score </label>
-			<input type="text" class="form-control" id="scoreBox"/>
+			<input type="text" class="form-control" id="scoreBox" name="scoreBox" required #tscoreBox="ngModel" [(ngModel)]="score.scoreBox"/>
+			<span *ngIf="(tscoreBox.touched && !tscoreBox.valid) 
+                   	  || (scoreform.submitted && !tscoreBox.valid)"
+                   class="text-danger" style="font-size:12px;">
+                   Field can't be blank</span>
 		</div>
 		<div class="form-group">
-			<label class="mt-2">Test date</label><br/>
-			<select class="selectId">
+				<label for="month" >Filing date</label>
+			<div class="row">
+			<div class="col col-2">
+			<select class="selectId form-control" id="month" name="month">
 				<option>Month</option>
 			</select>
-			<select class="selectId">
+		</div>
+		<div class="col col-2">
+			<select class="selectId form-control" id="month1" name="month1">
 				<option>Year</option>
 			</select>
 		</div>
+		</div>
+	</div>
 		<div class="form-group">
 			<label for="descriptionBox" class="mt-2">Description</label>
-			<textarea type="text" class="form-control" id="descriptionBox"></textarea>
+			<textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="descriptionBox"></textarea>
+			<span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) 
+                   	  || (scoreform.submitted && !tdescriptionBox.valid)"
+                   class="text-danger" style="font-size:12px;">
+                   Field can't be blank</span>
 		</div>
 		<div class="text-right mt-5">
-			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+			<button class="btn btn-primary btn-md"><strong>Save</strong></button>
 		</div>
 	</form>
 </div>

@@ -3,7 +3,8 @@
 		<h3>Add Skills</h3>
 		<div class="form-group">
 			<input type="text" class="form-control mt-4" id="addSkill" [(ngModel)]="addSkills" name="skills" required #skills="ngModel">
-			<span *ngIf="(!skills.valid && skills.touched) || (skillsForm.submitted && !skills.valid)" class="text-danger">Required Field</span>
+			<span *ngIf="(!skills.valid && skills.touched) || (skillsForm.submitted && !skills.valid)" class="text-danger"style="font-size:12px;">
+				Field can't be blank</span>
 		</div>
 
 		<div class="form-group mt-5" id="addInput">

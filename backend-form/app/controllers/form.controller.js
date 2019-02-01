@@ -2,6 +2,7 @@ const Form = require('../models/edit-intro.models.js');
 
 // Create and Save a new Note
 exports.create = (req, res) => {
+    console.log(req.body);
 	const form = new Form({
 		firstName: req.body.firstName || "Untitled firstName",
 		lastName: req.body.lastName || "Untitled lastName",
@@ -11,9 +12,9 @@ exports.create = (req, res) => {
 		state: req.body.state || "Untitled state",
 		city: req.body.city || "Untitled city",
 		industry: req.body.industry || "Untitled industry",
-		phone: req.body.phone || "Untitled Form",
-		email: req.body.email || "Untitled Form",
-		summery: req.body.summery || "Untitled summery"
+		phone: req.body.phone || "Untitled phone number",
+		email: req.body.email || "Untitled email",
+	    summary: req.body.summary || "Untitled summary"   
 	});
 	form.save()
 	.then(data => {
@@ -80,9 +81,9 @@ exports.update = (req, res) => {
 		state: req.body.state || "Untitled state",
 		city: req.body.city || "Untitled city",
 		industry: req.body.industry || "Untitled industry",
-		phone: req.body.phone || "Untitled Form",
-		email: req.body.email || "Untitled Form",
-		summery: req.body.summery || "Untitled summery"
+		phone: req.body.phone || "Untitled phone",
+		email: req.body.email || "Untitled email",
+		summary: req.body.summary || "Untitled summary"
 
     }, {new: true})
     .then( form => {

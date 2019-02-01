@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class PublicationComponent implements OnInit {
 
-	addPublication = {'title':'', 
+	publication = {'title':'', 
 					  'publication':'', 
 					  'publicationUrl':'', 
 					  'description':''}

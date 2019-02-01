@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EditFormService } from '../services/edit-form.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-edit-info',
@@ -9,33 +11,37 @@ import { EditFormService } from '../services/edit-form.service';
 })
 export class EditInfoComponent implements OnInit {
 
-  ediinfoForm: NgForm
-  user = { firstName:'',lastName:'',
-        headLine:'', selectEdu:'',
-        checkShow:'', country:'',
-        state:'', city:'',
-        industry:'',summary:'',
-  };
+  user = { 'firstName': '',
+           'lastName': '',
+           'headLine': '',
+           'educationList':['BE', 'B.TECH'],
+           'country':['India', 'London'],
+           'state':['Karnakata', 'Paris'], 
+           'cities':['Bangalore', 'milpitas'],
+           'industry':['Amination'],
+           'profileUrl': '', 
+           'summary':'',
+        };
 
-  educationList = ['BE', 'B.tech', 'M.tech', 'MA'];
-  countryList = ['India', 'Australia', 'USA', 'UAE'];
-  stateList = ['Maharashtra', 'Karnataka', 'Jharkhand' ];
-  cityList = ['Mumbai', 'Bangalore', 'Ranchi'];
-  industryList = ['Animation', '', ''];
+  editData = {};
 
-  editForm = [];
-
-  constructor(private _editFormService: EditFormService) { }
+  constructor(private editFormService: EditFormService) { }
 
   ngOnInit() {
-    this._editFormService.getEditInfor().subscribe(
-      res => this.editForm = res,
-      err => console.log(err)
-    )
-  }
-
-  onSubmit(){
     
   }
 
+  createEditInfoDetails(userform: NgForm){
+    this.editData = userform.value;
+    console.log(userform.value);
+    this.editFormService.createEditIntro(this.editData).subscribe(
+    res => {
+      console.log(res)
+      },
+    err => console.log(err)
+    );    
+  }
+
 }
+
+

@@ -1,35 +1,52 @@
 <div class="container my-forms">
-	<form>
+	<form #projectform="ngForm" novalidate (ngSubmit)="onSubmit(projectform)">
 		<h3>Add project</h3>
 		<div class="form-group">
 			<label for="projectName" class="mt-4">Project name</label>
-			<input type="text" class="form-control" id="projectName"/>
-		</div>
-		<div class="row">
-			<div class="col">
-				<div>Dates</div>
-				<label id="startDate" class="mt-2">Start date</label>
-				<select class="form-control" id="monthSelect">
-					<option>Month</option>
-				</select>
-			</div>
-			<div class="col"><br>
-				<label id="endDate" class="mt-2">End date</label>
-				<select class="form-control" id="monthSelect">
-					<option>Month</option>
-				</select>
-			</div>
+			<input type="text" class="form-control" id="projectName" name="projectName" required #tprojectName="ngModel" [(ngModel)]="project.projectName"/>
+			<span *ngIf="(tprojectName.touched && !tprojectName.valid) 
+                   || (projectform.submitted && !tprojectName.valid)"
+                   class="text-danger" style="font-size:12px;">
+                   Field can't be blank</span>
+
 		</div>
 		<div class="row mt-2">
 			<div class="col">
-				<select class="form-control" id="yearSelect">
-					<option>Year</option>
+				<label id="startDate" >Start date</label>
+				<select class="form-control" id="monthSelect" name="monthSelect" required #tmonthSelect="ngModel" [(ngModel)]="project.monthSelect">
+					<option>Month</option>
 				</select>
+				<span *ngIf="(tmonthSelect.touched && !tmonthSelect.valid) 
+                   || (projectform.submitted && !tmonthSelect.valid)"
+                   class="text-danger" style="font-size:12px;">Field can't be blank</span>
 			</div>
 			<div class="col">
-				<select class="form-control" id="yearSelect">
+				<label id="endDate" >End date</label>
+				<select class="form-control" id="monthSelect1" name="monthSelect1" required #tmonthSelect1="ngModel" [(ngModel)]="project.monthSelect1">
+					<option>Month</option>
+				</select>
+				<span *ngIf="(tmonthSelect1.touched && !tmonthSelect1.valid) 
+                   || (projectform.submitted && !tmonthSelect1.valid)"
+                   class="text-danger" style="font-size:12px;">Field can't be blank</span>
+			</div>
+		</div>
+
+		<div class="row mt-2">
+			<div class="col">
+				<select class="form-control" id="yearSelect" name="yearSelect" required #tyearSelect="ngModel" [(ngModel)]="project.yearSelect">
 					<option>Year</option>
 				</select>
+				<span *ngIf="(tyearSelect.touched && !tyearSelect.valid) 
+                   || (projectform.submitted && !tyearSelect.valid)"
+                   class="text-danger" style="font-size:12px;">Field can't be blank</span>
+			</div>
+			<div class="col">
+				<select class="form-control" id="yearSelect1" name="yearSelect1" required #tyearSelect1="ngModel" [(ngModel)]="project.yearSelect1">
+					<option>Year</option>
+				</select>
+				<span *ngIf="(tyearSelect1.touched && !tyearSelect1.valid) 
+                   || (projectform.submitted && !tyearSelect1.valid)"
+                   class="text-danger" style="font-size:12px;">Field can't be blank</span>
 			</div>
 		</div>
 
@@ -47,10 +64,15 @@
 			<p class="text-primary text-lg-right">Add Creator</p>
 		</div>
 		<div class="form-group">
+
 			<label class="mt-2">Associated with</label>
-			<select class="dropdown-toggle">
+			<select class="form-control" name="dropdownToggle" required #tdropdownToggle="ngModel" [(ngModel)]="project.dropdownToggle">
 				<option class="dropdown-item"></option>
 			</select>
+
+			<span *ngIf="(tdropdownToggle.touched && !tdropdownToggle.valid) 
+                   || (projectform.submitted && !tdropdownToggle.valid)"
+                   class="text-danger" style="font-size:12px;">Field can't be blank</span>
 		</div>
 		<div class="form-group">
 			<label for="patentUrl" class="mt-2">Patent URL</label>
@@ -58,10 +80,14 @@
 		</div>
 		<div class="form-group">
 			<label for="descriptionBox" class="mt-2">Description</label>
-			<textarea type="text" class="form-control" id="descriptionBox"></textarea>
+			<textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="project.descriptionBox"></textarea>
+			
+			<span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) 
+                   || (projectform.submitted && !tdescriptionBox.valid)"
+                   class="text-danger" style="font-size:12px;">Field can't be blank</span>
 		</div>
 		<div class="text-right mt-5">
-			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+			<button class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
 		</div>
 	</form>
 </div>
