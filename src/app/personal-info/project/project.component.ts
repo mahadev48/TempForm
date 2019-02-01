@@ -25,5 +25,7 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit(){
+    
+  }
 }

@@ -18,7 +18,6 @@ import { PersonalInfoModule } from './personal-info/personal-info.module';
     /*EditInfoComponent,
     AddExperienceComponent,
     AddEducationComponent,*/
-
   ],
   imports: [
     BrowserModule,

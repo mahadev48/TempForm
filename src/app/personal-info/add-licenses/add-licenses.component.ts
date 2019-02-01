@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-licenses.component.css']
 })
 export class AddLicensesComponent implements OnInit {
+  licenses={'name':'',
+            'issue':'',
+            'monthSelect':'',
+            'monthSelect1':'',
+            'yearSelect':'',
+            'yearSelect1':'',
+            'credId':'',
+            'credUrl':''
 
+
+  };
   constructor() { }
 
   ngOnInit() {
+  }
+  onSubmit(){
+    
   }
 
 }

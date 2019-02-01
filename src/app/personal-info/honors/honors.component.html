@@ -1,5 +1,5 @@
 <div class="container my-forms">
-  <form #honorsform="ngForm" novalidate (ngSubmit)="onSubmit(honoursForm)">
+  <form #honorsform="ngForm" novalidate (ngSubmit)="onSubmit(honorsform)">
     <h3>Add honors & awards</h3>
     <div class="form-group">
       <label for="title" class="mt-4">Title</label>
@@ -34,8 +34,8 @@
     <div class="row">
       <div class="col">
         <select class="form-control" id="monthSelect" name="monthSelect" required #tmonthSelect="ngModel" [(ngModel)]="honors.monthSelect">
-		  <option>Month</option>
-		  <option> Month2</option>
+      <option>Month</option>
+      <option> Month2</option>
         </select>
         <span *ngIf=" (tmonthSelect.touched && !tmonthSelect.valid ) || ( honorsform.submitted  && !tmonthSelect.valid)"
           class="text-danger" style="font-size:12px;">
@@ -53,8 +53,8 @@
     </div>
     <div class="form-group">
       <label for="descriptionBox" class="mt-2">Description</label>
-	  <textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="honors.descriptionBox"></textarea>
-	  <span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) 
+    <textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="honors.descriptionBox"></textarea>
+    <span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) 
                    || (honorsform.submitted && !tdescriptionBox.valid)"
           class="text-danger" style="font-size:12px;">
           Field can't be blank</span>
