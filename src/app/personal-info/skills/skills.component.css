@@ -1,12 +1,12 @@
-h3,label{
+/*h3,label{
 	font-family:"Arial";
 }
-/*#addSkill{
+#addSkill{
 	border: 2px solid gray;
-}*/
+}
 #addInput{
 	font-family:"Arial";
-}
+}*/
 .btn.btn-outline-primary{
 	border-radius: 40px;
 	border: 2px solid;

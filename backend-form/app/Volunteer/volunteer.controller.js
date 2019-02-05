@@ -3,12 +3,14 @@ const Volunteer = require('./volunteer.models.js');
 
 exports.create = (req, res) => {
 	const volunteerForm = new Volunteer({
-			organization: req.body.organization || "Untitled Organization",
-			role: req.body.role || "Untitled Role",
+			organi: req.body.organi || "Untitled organi",
+			role: req.body.role || "Untitled role",
 			cause: req.body.cause || "Untitled cause",
-			startDate: req.body.startDate || "Untitled StartDate",
-			endDate: req.body.endDate || "Untitled EndDate",
-			description: req.body.description || "Untitled Description"
+			monthSelect: req.body.monthSelect || "Untitled monthSelect",
+			monthSelect1: req.body.monthSelect1 || "Untitled monthSelect1",
+			yearSelect: req.body.yearSelect || "Untitled yearSelect",
+			yearSelect1: req.body.yearSelect1 || "Untitled yearSelect1",
+			descri: req.body.descri || "Untitled descri"
 	});
 	volunteerForm.save()
 	.then(data => {

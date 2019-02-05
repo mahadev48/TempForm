@@ -5,10 +5,10 @@ exports.create = (req, res) => {
 	const formScore = new Score({
 		testName: req.body.testName || "Untitled testName",
 		associatedWith: req.body.associatedWith || "Untitled associatedWith",
-		scoreFields: req.body.scoreFields || "Untitled scoreFields",
+		scoreBox: req.body.scoreBox || "Untitled scoreBox",
 		month: req.body.month || "Untitled month",
 		year: req.body.year || "Untitled year",
-		description: req.body.description || "Untitled description"
+		descriptionBox: req.body.descriptionBox || "Untitled descriptionBox"
 	});
 	formScore.save()
 	.then(data => {

@@ -2,19 +2,17 @@
 	<form  #skillsForm="ngForm" (ngSubmit)="onSubmit(skillsForm);">
 		<h3>Add Skills</h3>
 		<div class="form-group">
-			<input type="text" class="form-control mt-4" id="addSkill" [(ngModel)]="addSkills" name="skills" required #skills="ngModel">
-			<span *ngIf="(!skills.valid && skills.touched) || (skillsForm.submitted && !skills.valid)" class="text-danger"style="font-size:12px;">
-				Field can't be blank</span>
+			<input type="text" class="form-control mt-4" id="addSkills" [(ngModel)]="addSkills" name="addSkills" required #skills="ngModel">
+			<span *ngIf="(!skills.valid && skills.touched) || (skillsForm.submitted && !skills.valid)" class="text-danger"style="font-size:12px;">Field can't be blank</span>
 		</div>
-
 		<div class="form-group mt-5" id="addInput">
 			<label>Suggested skills based off your profile:</label><br>
-			<button class="btn btn-outline-primary btn-md"><i class="fa fa-plus"></i>Logo Design</button>
+			<button class="btn btn-outline-primary btn-md "><i class="fa fa-plus"></i>Logo Design</button>
 			<button class="btn btn-outline-primary btn-md"><i class="fa fa-plus"></i>Microsoft word</button>
 			<button class="btn btn-outline-primary btn-md"><i class="fa fa-plus"></i>HTML</button>
 			<button class="btn btn-outline-primary btn-md"><i class="fa fa-plus"></i>Team Management</button>
 			<div class="text-right mt-5">
-			<button type="submit" class="btn btn-primary btn-md" id="addBtn"><strong>Add</strong></button>
+			<button type="submit" class="btn btn-primary btn-md" id="addBtn">Add</button>
 			</div>
 		</div>
 	</form>

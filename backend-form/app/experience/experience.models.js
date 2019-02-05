@@ -3,8 +3,8 @@ const expFormsSchema = mongoose.Schema({
 					title: String,
 					role: String,
 					location: String,
-					from: String,
-					present: String,
+					month: String,
+					years: String,
 					headline: String,
 					description: String
 					});

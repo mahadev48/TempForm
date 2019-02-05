@@ -4,12 +4,14 @@ const Project = require('./project.models.js');
 exports.create = (req, res) => {
 	const formProject = new Project({
 		projectName: req.body.projectName || "Untitled projectName",
-		startDate: req.body.startDate || "Untitled startDate",
-		endDate: req.body.endDate || "Untitled endDate",
-		creator: req.body.creator || "Untitled creator",
+		monthSelect: req.body.monthSelect || "Untitled monthSelect",
+		monthSelect1: req.body.monthSelect1 || "Untitled monthSelect1",
+		yearSelect: req.body.yearSelect || "Untitled yearSelect",
+		yearSelect1: req.body.yearSelect1 || "Untitled yearSelect1",
+		creatorName: req.body.creatorName || "Untitled creatorName",
 		associatedWith: req.body.associatedWith || "Untitled associatedWith",
 		projectUrl: req.body.projectUrl || "Untitled projectUrl",
-		description: req.body.description || "Untitled description"
+		descriptionBox: req.body.descriptionBox || "Untitled descriptionBox"
 	});
 	formProject.save()
 	.then(data => {

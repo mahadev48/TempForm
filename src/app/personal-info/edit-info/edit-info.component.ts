@@ -18,8 +18,8 @@ export class EditInfoComponent implements OnInit {
            'country':['India', 'London'],
            'state':['Karnakata', 'Paris'], 
            'cities':['Bangalore', 'milpitas'],
-           'industry':['Amination'],
-           'profileUrl': '', 
+           'industry':['amination', 'developer'],
+           'contactInfo': '', 
            'summary':'',
         };
 

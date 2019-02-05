@@ -2,29 +2,25 @@
 	<form #langForm="ngForm" novalidate (ngSubmit)="onSubmit(langForm)">
 		<h3>Add language</h3>
 		<div class="form-group">
-			<label for="language" class="mt-4">Language</label>
-			<input type="text" class="form-control" name="language" id="language" required #tlanguage="ngModel" [(ngModel)]="language.lang"/>
-
+			<label for="lang" class="mt-4">Language</label>
+			<input type="text" class="form-control" name="lang" id="lang" required #tlanguage="ngModel" [(ngModel)]="language.lang"/>
 			<span *ngIf="(tlanguage.touched && !tlanguage.valid) 
 			|| (langForm.submitted && !tlanguage.valid)"
                    class="text-danger" style="font-size:12px;">
                    Field can't be blank</span>
-
 		</div>
 		<div class="form-group">
 			<label class="mt-2">Proficiency</label>
 			<select class="dropdown-toggle form-control" name="proficiency" id="proficiency" required #tproficiency="ngModel" [(ngModel)]="language.proficiency" >
-				<option class="dropdown-item">tolo</option>
-				<option class="dropdown-item">dolo</option>
+				<option class="dropdown-item">Java</option>
 			</select>
 			<span *ngIf="(tproficiency.touched && !tproficiency.valid) 
 			|| (langForm.submitted && !tproficiency.valid)"
                    class="text-danger" style="font-size:12px;">
                    Field should selected</span>
-
 		</div>
 		<div class="text-right mt-5">
-			<button type="button" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+			<button type="submit" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
 		</div>
 	</form>
 </div>

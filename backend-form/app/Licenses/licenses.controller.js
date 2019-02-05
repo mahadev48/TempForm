@@ -4,11 +4,13 @@ const License = require('./licenses.models.js');
 exports.create = (req, res) => {
 	const formLicenses = new License({
 		name: req.body.name || "Untitled Name",
-		issueOrg: req.body.issueOrg || "Untitled issueOrg",
-		issueDate: req.body.issueDate || "Untitled issueDate",
-		expireDate: req.body.expireDate || "Untitled expireDate",
-		credentialId: req.body.credentialId || "Untitled credentialId",
-		credentialUrl: req.body.credentialUrl || "Untitled credentialUrl"
+		issue: req.body.issue || "Untitled issue",
+		monthSelect: req.body.monthSelect || "Untitled monthSelect",
+		monthSelect1: req.body.monthSelect1 || "Untitled monthSelect1",
+		yearSelect: req.body.yearSelect || "Untitled yearSelect",
+		yearSelect1: req.body.yearSelect1 || "Untitled yearSelect1",
+		credId: req.body.credId || "Untitled credId",
+		credUrl: req.body.credUrl || "Untitled credUrl",
 	});
 
 	formLicenses.save()

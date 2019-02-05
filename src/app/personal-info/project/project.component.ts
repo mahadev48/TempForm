@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ProjectService } from '../services/project.service';
 
 @Component({
   selector: 'app-project',
@@ -7,25 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  project= { 'projectName':'',
-              'startDate':'',
-              'endDate':'',
+  project = { 
+              'projectName':'',
               'monthSelect':'',
               'monthSelect1':'',
               'yearSelect':'',
               'yearSelect1':'',
-              'dropdownToggle':'',
-              'descriptionBox': ''
+              'creatorName':'',
+              'associatedWith':'',
+              'projectUrl':'',
+              'descriptionBox': ''             
+            };
 
-              
-
-
-  };
-  constructor() { }
+  projectData = {};
+            
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
   }
-  onSubmit(){
-    
+
+  onSubmit(projectform: NgForm) {
+    this.projectData = projectform.value;
+    console.log(projectform.value);
+    this.projectService.projectCreate(this.projectData).subscribe(
+      res =>{
+        console.log(res);
+      },
+      err =>{
+        console.log(err);
+      });
   }
 }

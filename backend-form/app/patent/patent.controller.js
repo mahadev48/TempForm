@@ -5,8 +5,8 @@ exports.create = (req, res) => {
 	const patentForm = new Patent({
 			patentTitle: req.body.patentTitle || "Untitled patentTitle",
 			patentOffice: req.body.patentOffice || "Untitled patentOffice",
-			patentNumber: req.body.patentNumber || "Untitled patentNumber",
-			inventor: req.body.inventor || "Untitled inventor",
+			applicationNumber: req.body.applicationNumber || "Untitled applicationNumber",
+			inventorName: req.body.inventorName || "Untitled inventorName",
 			fillingDate: req.body.fillingDate || "Untitled fillingDate",
 			patentUrl: req.body.patentUrl || "Untitled patentUrl",
 			description: req.body.description || "Untitled description"

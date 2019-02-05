@@ -4,11 +4,11 @@ const Publication = require('./publication.models.js');
 exports.create = (req, res) => {
 	const publicationForm = new Publication({
 			title: req.body.title || "Untitled title",
-			publisher: req.body.publisher || "Untitled publisher",
+			publication: req.body.publication || "Untitled publication",
 			day: req.body.day || "Untitled day",
 			month: req.body.month || "Untitled month",
 			year: req.body.year || "Untitled year",
-			publicationDate: req.body.publicationDate || "Untitled publicationDate",
+			publicationUrl: req.body.publicationUrl || "Untitled publicationUrl",
 			description: req.body.description || "Untitled description"
 	});
 	publicationForm.save()

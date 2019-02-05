@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const educationSchema = mongoose.Schema({
 					school: String,
 					degree: String,
-					fieldStudy: String,
+					studyField: String,
 					grade: String,
 					activities: String,
 					fromYear: String,
-					toYear: String,
+					toYears: String,
 					description: String
 					});
 module.exports = mongoose.model('Education', educationSchema);

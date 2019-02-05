@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { LanguagesService } from '../services/languages.service';
 
 @Component({
   selector: 'app-language',
@@ -7,11 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageComponent implements OnInit {
 
-  language={lang:'',proficiency:''};
-  constructor() { }
+  	language = {
+  				'lang':'',
+  				'proficiency':''
+  				};
+
+  	languageData = {};		
+
+  constructor(private languageService:LanguagesService) { }
 
   ngOnInit() {
   }
 
-  onSubmit(){}
+  onSubmit(langForm: NgForm){
+  	this.languageData = langForm.value;
+  	console.log(langForm.value);
+  	this.languageService.languageCreate(this.languageData).subscribe(
+  	res => {
+  		console.log(res);
+  	},
+  	err => {
+  		console.log(err);
+  	});
+  }
 }

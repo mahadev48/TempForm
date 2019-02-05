@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const volunteerFormSchema = mongoose.Schema({
-							organization: String,
+							organi: String,
 							role: String,
 							cause: String,
-							startDate: String,
-							endDate: String,
-							description: String
+							monthSelect: String,
+							monthSelect1: String,
+							yearSelect: String,
+							yearSelect1: String,
+							descri: String
 						});
 module.exports = mongoose.model('Volunteer', volunteerFormSchema);
 

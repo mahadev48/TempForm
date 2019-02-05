@@ -5,7 +5,6 @@
         <label for="name">Name</label>
         <input class="form-control" id="name" type="text" placeholder="Ex. Cisco Certified Newtork Associate Security (CCNA)" required 
         [(ngModel)]="licenses.name" name="name" #tname="ngModel">
-        
         <span *ngIf="(tname.touched && !tname.valid) 
         || (licensesForm.submitted && !tname.valid)"
         class="text-danger" style="font-size:12px;">
@@ -23,8 +22,7 @@
         <div class="col">
           <label for="monthSelect">Issue Data</label>
           <select name="monthSelect" id="monthSelect" class="form-control" required [(ngModel)]="licenses.monthSelect" name="monthSelect" #tmonthSelect="ngModel">
-            <option value="1">month</option>
-            <option value="2">1</option>
+            <option value="1">Month</option>
           </select>
           <span *ngIf="(tmonthSelect.touched && !tmonthSelect.valid) 
           || (licensesForm.submitted && !tmonthSelect.valid)"
@@ -32,10 +30,9 @@
           Field can't be blank</span>
         </div>
         <div class="col">
-          <label for="monthSelect1">Exper Data</label>
+          <label for="monthSelect1">Expiration Date</label>
           <select name="monthSelect1" id="monthSelect1" class="form-control" required [(ngModel)]="licenses.monthSelect1" name="monthSelect1" #tmonthSelect1="ngModel">
-            <option value="1">month</option>
-            <option value="2">1</option>
+            <option value="1">Month</option>
           </select>
           <span *ngIf="(tmonthSelect1.touched && !tmonthSelect1.valid) || (licensesForm.submitted && !tmonthSelect1.valid)"          class="text-danger" style="font-size:12px;">
           Field can't be blank</span>
@@ -46,22 +43,19 @@
         <div class="col ">
           <select id="yearSelect" class="form-control" required  [(ngModel)]="licenses.yearSelect" name="yearSelect" #tyearSelect="ngModel" >
             <option value="1">Year</option>
-            <option value="2">1</option>
           </select>
-
           <span *ngIf="(tyearSelect.touched && !tyearSelect.valid) || (licensesForm.submitted && !tyearSelect.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
         </div>
         <div class="col ">
           <select  id="yearSelect1" class="form-control" required [(ngModel)]="licenses.yearSelect1" name="yearSelect1" #tyearSelect1="ngModel">
             <option value="1">Year</option>
           </select>
-          
           <span *ngIf="(tyearSelect1.touched && !tyearSelect1.valid) || (licensesForm.submitted && !tyearSelect1.valid)" class="text-danger" style="font-size:12px;">
           Field can't be blank</span>
         </div>
       </div>
-
-      <div class="form-checkbox mt-1">
+      <br>
+      <div class="form-checkbox mt-1 col">
         <input type="checkbox" class="form-check-input" id="check-exp">
         <label class="form-check-label text-muted" for="check-exp">This certification does not expire</label>
       </div>

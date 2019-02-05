@@ -3,7 +3,7 @@ const Language = require('./language.models.js');
 
 exports.create = (req, res) => {
 	const formLanguage = new Language({
-		language: req.body.language || "Untitled language",
+		lang: req.body.lang || "Untitled lang",
 		proficiency: req.body.proficiency || "Untitled proficiency"
 	});
 	formLanguage.save()

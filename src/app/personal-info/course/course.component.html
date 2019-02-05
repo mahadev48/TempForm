@@ -6,7 +6,6 @@
 			<input type="text" class="form-control" id="courseName" name="courseName" required 
 																	#tcourseName="ngModel" 
 																	[(ngModel)]="course.courseName"/>
-			
 			<span *ngIf="(tcourseName.touched && !tcourseName.valid) 
 			|| (courseForm.submitted && !tcourseName.valid)"
 			class="text-danger" style="font-size:12px;">
@@ -25,13 +24,13 @@
 			Field can't be blank</span>
 		</div>
 		<div class="form-group">
-			<label for="associatedId" class="mt-2">Associated with</label>
-			<select class="dropdown-toggle" id="associatedId" required
-			[(ngModel)]="course.associatedId"
-			 name="associatedId"
+			<label for="associatedWith" class="mt-2">Associated with</label>
+			<select class="dropdown-toggle" id="associatedWith" required
+			[(ngModel)]="course.associatedWith"
+			 name="associatedWith"
 			  #tassociatedId="ngModel">
 				<option class="dropdown-item"></option>
-				<option></option>
+				<option>Microsoft</option>
 			</select>
 			<span *ngIf="(tassociatedId.touched && !tassociatedId.valid) 
 			|| (courseForm.submitted && !tassociatedId.valid)"

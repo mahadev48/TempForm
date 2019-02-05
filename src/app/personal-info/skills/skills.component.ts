@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { SkillsService } from '../services/skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,12 +10,22 @@ import { NgForm } from '@angular/forms';
 export class SkillsComponent implements OnInit {
 	
 	
-  	constructor() { }
+  	constructor(private skillService: SkillsService) { }
+
   	addSkills: '';
+    skillData = {};
 
   ngOnInit() {
   }
-  onSubmit(){
-  	console.log(this.addSkills);
+  onSubmit(skillsForm: NgForm){
+  	this.skillData = skillsForm.value;
+    console.log(skillsForm.value);
+    this.skillService.skillsCreate(this.skillData).subscribe(
+      res =>{
+        console.log(res);
+      },
+      err =>{
+        console.log(err);
+      });
   }
 }

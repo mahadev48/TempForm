@@ -4,13 +4,13 @@ const Organization = require('./organization.models.js');
 exports.create = (req, res) => {
 	const formOrganization = new Organization({
 		name: req.body.name || "Untitled name",
-		position: req.body.position || "Untitled position",
-		associatedWith: req.body.associatedWith || "Untitled associatedWith",
-		fromMonth: req.body.fromMonth || "Untitled fromMonth",
-		fromYear: req.body.fromYear || "Untitled fromYear",
-		toMonth: req.body.toMonth || "Untitled toMonth",
-		toYear: req.body.toYear || "Untitled toYear",
-		description: req.body.description || "Untitled description"
+		post: req.body.post || "Untitled post",
+		associat: req.body.associat || "Untitled associat",
+		monthSelect: req.body.monthSelect || "Untitled monthSelect",
+		monthSelect1: req.body.monthSelect1 || "Untitled monthSelect1",
+		yearSelect: req.body.yearSelect || "Untitled yearSelect",
+		yearSelect1: req.body.yearSelect1 || "Untitled yearSelect1",
+		descri: req.body.descri || "Untitled descri"
 	});
 	formOrganization.save()
 	.then(data => {
