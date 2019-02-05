@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const patentFormSchema = mongoose.Schema({
 							patentTitle: String,
 							patentOffice: String,
-							patentNumber: String,
-							inventor: String,
+							applicationNumber: String,
+							inventorName: String,
 							fillingDate: String,
 							patentUrl: String,
 							description: String

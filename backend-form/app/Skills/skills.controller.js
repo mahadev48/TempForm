@@ -2,8 +2,9 @@
 const Skill = require('./skills.models.js');
 
 exports.create = (req, res) => {
+	console.log(req);
 	const skillForm = new Skill({
-			skillField: req.body.skillField || "Untitled skillField"
+			addSkills: req.body.addSkills || "Untitled Add Skills"
 	});
 	skillForm.save()
 	.then(data => {

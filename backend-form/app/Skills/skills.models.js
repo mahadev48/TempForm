@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const skillsFormSchema = mongoose.Schema({
-							skillField: String
+							addSkills: String
 						});
 module.exports = mongoose.model('Skills', skillsFormSchema);
 

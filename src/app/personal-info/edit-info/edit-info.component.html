@@ -29,12 +29,13 @@
     <!-- select education  -->
     <div class="form-group">
       <label for="edu">Education</label>
-      <select name="eduSelect" id="edu" class="form-control" [(ngModel)]="user.selectEdu" required #tedu="ngModel">
+      <select name="eduSelect" id="edu" class="form-control" [(ngModel)]="education" required #tedu="ngModel">
         <option value="1" *ngFor="let education of user.educationList">{{education}}</option>
       </select>
       <span *ngIf="(tedu.touched && !tedu.valid) || (userform.submitted && !tedu.valid)" class="text-danger" style="font-size:12px;"> Need to select an option.</span> 
       <a class="text-info float-right"><span class="fa fa-plus"></span>Add new education</a>
     </div>
+    <br>
     <!--checkbox  -->
     <div class="form-check">
       <input type="checkbox" id="checkShow" class="form-check-input">
@@ -61,7 +62,7 @@
     </div>
     <div class="form-group">
       <label for="city">City/District</label>
-      <select name="citySelect" id="city" class="form-control" required [(ngModel)]="user.city" #tcitySelect="ngModel"> 
+      <select name="citySelect" id="city" class="form-control" required [(ngModel)]="city" #tcitySelect="ngModel"> 
         <option value="1" selected *ngFor="let city of user.cities">{{city}}</option>
       </select>
       <span *ngIf="(tcitySelect.touched && !tcitySelect.valid) || (userform.submitted && !tcitySelect.valid)"    
@@ -79,7 +80,7 @@
     </div>
     <div class="form-group">
       <label for="contactInfo">Contact Info</label>
-      <input type="text" class="form-control" id="contactInfo" name="contactInfo" placeholder="Profile URL, Phone, Email, Birthday" required [(ngModel)]="user.profileUrl" #tProfile="ngModel">
+      <input type="text" class="form-control" id="contactInfo" name="contactInfo" placeholder="Profile URL, Phone, Email, Birthday" required [(ngModel)]="user.contactInfo" #tProfile="ngModel">
       <span *ngIf="(tProfile.touched && !tProfile.valid)||(userform.submitted && !tProfile.valid)" class="text-danger" style="font-size:12px;">Field can't be Blank</span>
     </div>
     <hr>

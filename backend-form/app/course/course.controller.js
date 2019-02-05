@@ -4,7 +4,7 @@ const Course = require('./course.models.js');
 exports.create = (req, res) => {
 	const formCourse = new Course({
 		courseName: req.body.courseName || "Untitled courseName",
-		number: req.body.number || "Untitled number",
+		numberId: req.body.numberId || "Untitled numberId",
 		associatedWith: req.body.associatedWith || "Untitled associatedWith"
 	});
 	formCourse.save()

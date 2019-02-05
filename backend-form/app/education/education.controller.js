@@ -7,11 +7,11 @@ exports.create = (req, res) => {
 	const eduForm = new Education({
 			school: req.body.school || "Untitled school",
 			degree: req.body.degree || "Untitled degree",
-			fieldStudy: req.body.fieldStudy || "Untitled fieldStudy",
+			studyField: req.body.studyField || "Untitled studyField",
 			grade: req.body.grade || "Untitled grade",
 			activities: req.body.activities || "Untitled activities",
 			fromYear: req.body.fromYear || "Untitled fromYear",
-			toYear: req.body.toYear || "Untitled toYear",
+			toYears: req.body.toYears || "Untitled toYears",
 			description: req.body.description || "Untitled Description"
 	});
 	eduForm.save()

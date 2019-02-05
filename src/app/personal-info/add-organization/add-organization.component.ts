@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { OrganizationService } from '../services/organization.service';
 
 @Component({
   selector: 'app-add-organization',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddOrganizationComponent implements OnInit {
   
+
   organization={ 'name':'',
   'post':'',
   'associat':'',
@@ -17,12 +20,24 @@ export class AddOrganizationComponent implements OnInit {
   'checkMember': false,
   'descri':''
 };
-  constructor() { }
+      
+organizationData={};
+  constructor(private orgService: OrganizationService) { }
+
 
   ngOnInit() {
   }
-  onSubmit(){
 
+  onSubmit(organizationForm: NgForm){
+    this.organizationData = organizationForm.value;
+    console.log(organizationForm.value);
+    this.orgService.organizationCreate(this.organizationData).subscribe(
+     res =>{
+       console.log(res);
+     },
+     err =>{
+       console.log(err);
+     });
   }
 
 }

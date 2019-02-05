@@ -6,14 +6,13 @@ exports.create = (req, res) => {
 	const form = new Form({
 		firstName: req.body.firstName || "Untitled firstName",
 		lastName: req.body.lastName || "Untitled lastName",
-		headline: req.body.headline || "Untitled headline",
-		education: req.body.education || "Untitled education",
+		headLine: req.body.headLine || "Untitled headLine",
+		educationList: req.body.educationList || "Untitled educationList",
 		country: req.body.country || "Untitled country",
 		state: req.body.state || "Untitled state",
-		city: req.body.city || "Untitled city",
-		industry: req.body.industry || "Untitled industry",
-		phone: req.body.phone || "Untitled phone number",
-		email: req.body.email || "Untitled email",
+		cities: req.body.cities || "Untitled cities",
+        industry: req.body.industry || "Untitled industry",
+		contactInfo: req.body.contactInfo || "Untitled contactInfo",
 	    summary: req.body.summary || "Untitled summary"   
 	});
 	form.save()

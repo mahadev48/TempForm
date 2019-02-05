@@ -8,8 +8,8 @@ exports.create = (req, res) => {
 		title: req.body.title || "Untitled title",
 		role: req.body.role || "Untitled role",
 		location: req.body.location || "Untitled location",
-		from: req.body.from || "Untitled from",
-		present: req.body.present || "Untitled present",
+		month: req.body.month || "Untitled month",
+		years: req.body.years || "Untitled years",
 		headline: req.body.headline || "Untitled headline",
 		description: req.body.description || "Untitled description"
 	});

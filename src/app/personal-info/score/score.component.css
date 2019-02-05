@@ -1,9 +1,6 @@
 h3,label{
 	font-family:"Arial";
 }
-#textName,#associatedWith,#scoreBox{
-	/*border: 2px solid gray;*/
-}
 .dropdown-toggle{
 	width: 100%;
 	/*border: 2px solid gray;*/
@@ -11,14 +8,7 @@ h3,label{
 	border-radius: 5px;
 	height: 40px;
 }
-.selectId{
-	/*border: 2px solid gray;*/
-	font-family:"Arial";
-	color: gray;
-	box-sizing: border-box;
-	border-radius: 5px;
-	margin-left: 10px;
-}
+
 #descriptionBox{
 	height: 140px;
 	width: 100%;

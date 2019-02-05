@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const scoreFormSchema = mongoose.Schema({
 						testName: String,
 						associatedWith: String,
-						scoreFields: String,
+						scoreBox: String,
 						month: String,
 						year: String,
-						description: String
+						descriptionBox: String
 						});
 module.exports = mongoose.model('Score', scoreFormSchema);

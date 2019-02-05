@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { HonorsService } from '../services/honors.service';
 
 @Component({
   selector: 'app-honors',
@@ -6,24 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./honors.component.css']
 })
 export class HonorsComponent implements OnInit {
-  honors={ 'title':'',
-  'associatedId':[],
-  'issuerId':'',
-  'issuer':'',
-  'yearSelect':[],
-  'monthSelect':[],
+  honors = { 
+              'title':'',
+              'associatedId':'',
+              'issuer':'',
+              'monthSelect':'',
+              'yearSelect':'',
+              'descriptionBox':''
+            };
 
-  'descriptionBox':''
-};
-  constructor() {
-
-  }
+  honorsData = {};
+            
+  constructor(private honorsService: HonorsService) {}
 
   ngOnInit() {
   }
   
-  onSubmit(){
-
+  onSubmit(honorsform: NgForm){
+    this.honorsData = honorsform.value;
+    console.log(honorsform.value);
+    this.honorsService.honorsCreate(this.honorsData).subscribe(
+      res =>{
+        console.log(res);
+      },
+      err =>{
+        console.log(err);
+      });
   }
 
 }

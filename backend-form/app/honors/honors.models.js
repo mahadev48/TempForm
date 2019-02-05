@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const honorsFormSchema = mongoose.Schema({
 						title: String,
-						associatedWith: String,
+						associatedId: String,
 						issuer: String,
-						month: String,
-						year: String,
-						description: String
+						monthSelect: String,
+						yearSelect: String,
+						descriptionBox: String
 						});
 module.exports = mongoose.model('Honors', honorsFormSchema);

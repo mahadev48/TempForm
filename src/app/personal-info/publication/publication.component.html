@@ -1,21 +1,19 @@
 <div class="container my-forms">
-	<form (ngSubmit)="onSubmit(ftitle)"
-	 #ftitle="ngForm">
+	<form #ftitle="ngForm" (ngSubmit)="onSubmit(ftitle)">
 		<h3>Add publication</h3>
 		<div class="form-group">
-			<label for="inputTitle" class="mt-4">Title</label>
-			<input type="text" class="form-control" id="inputTitle" [(ngModel)]="publication.title" name="publication" required #publication="ngModel" />
+			<label for="title" class="mt-4">Title</label>
+			<input type="text" class="form-control" id="title" [(ngModel)]="publication.title" name="title" required #publication="ngModel" />
 			<small id="exampleId">Ex: Giving and receiving feedback</small><br/>
 			<span *ngIf="(!publication.valid && publication.touched) || (ftitle.submitted && !publication.valid)" class="text-danger"style="font-size:12px;">
 				Field can't be blank</span>
 		</div>
 		<div class="form-group">
-			<label for="inputPublication">Publication/Publisher</label>
+			<label for="publication">Publication/Publisher</label>
 			<input type="text" class="form-control" id="publication" name="publication" required #pPublication="ngModel" [(ngModel)]="publication.publication"/>
 			<small id="exampleId">Ex: Harvard Business Review</small><br/>
 			<span *ngIf="(!pPublication.valid && pPublication.touched) || (ftitle.submitted && !pPublication.valid)" class="text-danger"style="font-size:12px;">
 				Field can't be blank</span>
-			
 		</div>
 		<div class="form-group">
 			<label class="mt-2">Publication date</label><br>
@@ -30,17 +28,17 @@
 			</select>	
 		</div>
 		<div class="form-group">
-			<label for="inputUrl" class="mt-2">Publication URL</label>
-			<input type="text" class="form-control" id="inputUrl"/>
+			<label for="publicationUrl" class="mt-2">Publication URL</label>
+			<input type="text" class="form-control" id="publicationUrl" name="publicationUrl" required [(ngModel)]="publication.publicationUrl" #pPublicationUrl="ngModel"/>
+			<span *ngIf="(pPublicationUrl.touched && !pPublicationUrl.valid)||(ftitle.submitted && !pPublicationUrl.valid)" class="text-danger" style="font-size:12px;">Field can't br blank</span>
 		</div>
 		<div class="form-group">
 			<label for="description" class="mt-2">Description</label>
-			<textarea type="text" class="form-control" id="description" name="description" [(ngModel)]="publication.description"></textarea>
-			<span *ngIf="(!pPublication.valid && pPublication.touched) || (ftitle.submitted && !pPublication.valid)" class="text-danger"style="font-size:12px;">
-				Field can't be blank</span>
+			<textarea type="text" class="form-control" name="description" id="description" required [(ngModel)]="publication.description" #pDescription="ngModel"></textarea>
+			<span *ngIf="(pDescription.touched && !pDescription.valid)||(ftitle.submitted && !pDescription.valid)" class="text-danger"style="font-size:12px;">Field can't be blank</span>
 		</div>
 		<div class="text-right mt-5">
-			<button type="submit" class="btn btn-primary btn-md" id="saveBtn"><strong>Save</strong></button>
+			<button type="submit" class="btn btn-primary btn-md" id="saveBtn">Save</button>
 		</div>
 	</form>
 </div>

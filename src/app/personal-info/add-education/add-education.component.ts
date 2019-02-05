@@ -16,7 +16,7 @@ export class AddEducationComponent implements OnInit {
 				'studyField':'',
 				'grade':'',
 				'activities':'',
-				'years':['2000', '2001', '2002'],
+				'fromYear':['2000', '2001', '2002'],
 				'toYears':['2000', '2001', '2002'],
 				'description':''
 				};

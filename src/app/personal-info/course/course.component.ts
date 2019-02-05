@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { CourseService } from '../services/course.service';
 
 @Component({
   selector: 'app-course',
@@ -7,17 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
-    course={
-      'courseName':'',
-      'numberId':'',
-      'associatedId':''
-    }
-  constructor() { }
+    course = {
+              'courseName':'',
+              'numberId':'',
+              'associatedWith':''
+              };
+    courseData = {};
+      
+  constructor(private courseService:CourseService) { }
 
   ngOnInit() {
   }
-  onSubmit(){
-    
+
+  onSubmit(courseForm: NgForm) {
+    this.courseData = courseForm.value;
+    console.log(courseForm.value);
+    this.courseService.courseCreate(this.courseData).subscribe(
+     res =>{
+       console.log(res);
+     },
+     err =>{
+       console.log(err);
+     });
   }
 
 }
