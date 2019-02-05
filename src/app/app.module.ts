@@ -10,11 +10,17 @@ import { AddEducationComponent } from './my-form/add-education/add-education.com
 */
 import { projection } from '@angular/core/src/render3';
 import { PersonalInfoModule } from './personal-info/personal-info.module';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import {  HttpClientModule } from '@angular/common/http';
+
+import {CountriesService} from './countries.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DropdownComponent,
     /*EditInfoComponent,
     AddExperienceComponent,
     AddEducationComponent,*/
@@ -24,10 +30,12 @@ import { PersonalInfoModule } from './personal-info/personal-info.module';
     AppRoutingModule,
     FormsModule,
     AngularFontAwesomeModule,
-    PersonalInfoModule
+    PersonalInfoModule,
+    HttpClientModule,
+    NgbModule
     
   ],
-  providers: [],
+  providers: [CountriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

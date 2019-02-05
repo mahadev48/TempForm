@@ -6,19 +6,19 @@
     <div class="form-group">
       <label for="name">Name</label>
       <input class="form-control" type="text" name="name" id="name" required #tname="ngModel" [(ngModel)]="organization.name">
-      <span *ngIf="(tname.touched && !tname.valid) || (organizationForm.submitted && !tname.valida) " class="text-danger" style="font-size:12px;">Name can't be blank</span>
+      <span *ngIf="(tname.touched && !tname.valid) || (organizationForm.submitted && !tname.valid) " class="text-danger" style="font-size:12px;">Name can't be blank</span>
     </div>
   
     <div class="form-group">
       <label for="post">Position held</label>
       <input class="form-control" type="text" name="post" id="post" required #tpost="ngModel" [(ngModel)]="organization.post" >
-      <span *ngIf="(tpost.touched && !tpost.valid) || (organizationForm.submitted && !tpost.valida)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+      <span *ngIf="(tpost.touched && !tpost.valid) || (organizationForm.submitted && !tpost.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
     </div>
   
   <div class="form-group">
     <label for="associat">Associated with</label>
     <input class="form-control" type="text" name="associat" id="associat" required #tassociat="ngModel" [(ngModel)]="organization.associat" >
-    <span *ngIf="(tassociat.touched && !tassociat.valid) || (organizationForm.submitted && !tassociat.valida)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+    <span *ngIf="(tassociat.touched && !tassociat.valid) || (organizationForm.submitted && !tassociat.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
   </div>
   
     
@@ -62,9 +62,9 @@
   
         <label for="descri">Description</label>
         <textarea name="descri" id="descri" class="form-control" required #tdescri="ngModel" [(ngModel)]="organization.descri" ></textarea>
-        <span *ngIf="(tdescri.touched && !tdescri.valid) || (organizationForm.submitted && !tdescri.valida)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+        <span *ngIf="(tdescri.touched && !tdescri.valid) || (organizationForm.submitted && !tdescri.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
       </div>
-  <button class="btn btn-primary float-right">Save</button>
+  <button type ="submit "class="btn btn-primary float-right">Save</button>
   
   </div>
   </form>

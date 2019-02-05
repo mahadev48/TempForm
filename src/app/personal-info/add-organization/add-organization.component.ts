@@ -10,10 +10,10 @@ export class AddOrganizationComponent implements OnInit {
   organization={ 'name':'',
   'post':'',
   'associat':'',
-  'monthSelect':[],
-  'monthSelect1':[],
-  'yearSelect':[],
-  'yearSelect1':[],
+  'monthSelect':'',
+  'monthSelect1':'',
+  'yearSelect':'',
+  'yearSelect1':'',
   'checkMember': false,
   'descri':''
 };
