@@ -29,7 +29,7 @@
     <!-- select education  -->
     <div class="form-group">
       <label for="edu">Education</label>
-      <select name="eduSelect" id="edu" class="form-control" [(ngModel)]="education" required #tedu="ngModel">
+      <select name="eduSelect" id="edu" class="form-control" [(ngModel)]="user.educationList" required #tedu="ngModel">
         <option value="1" *ngFor="let education of user.educationList">{{education}}</option>
       </select>
       <span *ngIf="(tedu.touched && !tedu.valid) || (userform.submitted && !tedu.valid)" class="text-danger" style="font-size:12px;"> Need to select an option.</span> 
@@ -44,7 +44,7 @@
     <div class="row form-group mt-5">
       <div class="col">
         <label for="country">Country/Region</label>
-        <select name="countrySelect" id="country" class="form-control" required [(ngModel)]="country" #tcountrySelect="ngModel" (change)="onChangeCountry($event.target.value)">
+        <select name="countrySelect" id="country" class="form-control" required [(ngModel)]="user.country" #tcountrySelect="ngModel" (change)="onChangeCountry($event.target.value)">
           <option *ngFor="let country of countryList; let i = index" value="{{i}}">{{country.CountryName}}</option>
         </select>
         <span *ngIf="(tcountrySelect.touched && !tcountrySelect.valid) || (userform.submitted && !tcountrySelect.valid)" class="text-danger" style="font-size:12px;">Need to select an option
@@ -52,7 +52,7 @@
       </div>
       <div class="col">
         <label for="State">Province/State</label>
-        <select name="stateSelect" id="state" class="form-control" required [(ngModel)]="state" #tstateSelect="ngModel" (change)="onChangeState($event.target.value)">
+        <select name="stateSelect" id="state" class="form-control" required [(ngModel)]="user.state" #tstateSelect="ngModel" (change)="onChangeState($event.target.value)">
           <option value="?">Select Province</option>
           <option *ngFor="let state of stateList; let j = index" value="{{j}}">{{state.StateName}}</option>
         </select>
@@ -63,7 +63,7 @@
     </div>
     <div class="form-group">
       <label for="city">City/District</label>
-      <select name="citySelect" id="city" class="form-control" required [(ngModel)]="city" #tcitySelect="ngModel"> 
+      <select name="citySelect" id="city" class="form-control" required [(ngModel)]="user.cities" #tcitySelect="ngModel"> 
         <option *ngFor="let city of cityList; let k = index" value="{{k}}">{{city}}</option>
       </select>
       <span *ngIf="(tcitySelect.touched && !tcitySelect.valid) || (userform.submitted && !tcitySelect.valid)"    
@@ -72,7 +72,7 @@
     </div>
     <div class="form-group">
       <label for="industry">Industry</label>
-      <select name="industrySelect" id="industry" class="form-control" required [(ngModel)]="industry" #tindustrySelect="ngModel">
+      <select name="industrySelect" id="industry" class="form-control" required [(ngModel)]="user.industry" #tindustrySelect="ngModel">
         <option value="1" selected *ngFor="let industry of user.industry">{{industry}}</option>
       </select>
       <span *ngIf="(tindustrySelect.touched && !tindustrySelect.valid) || (userform.submitted && !tindustrySelect.valid)"    
@@ -106,11 +106,3 @@
 
   </form>
 </div>
-
-<!-- <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-
-<button type="button" class="btn btn-success btn-s" 
-  (click)="uploader.uploadAll()" 
-  [disabled]="!uploader.getNotUploadedItems().length" >
-      Upload an Image
-</button> -->

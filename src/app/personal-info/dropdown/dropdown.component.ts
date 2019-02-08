@@ -41,6 +41,8 @@ export class DropdownComponent implements OnInit {
   this.cityList=this.stateList[stateIndex].Cities;
   console.log('cityList:', this.cityList);
   }
+
+  
   uploadFile(fileEvent) {
     const file= fileEvent.target.files[0] ;
     console.log(file.type)
