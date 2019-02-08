@@ -1,11 +1,11 @@
-<div class="container">
+<!-- <div class="container">
 <form>
   <div class="row mt-5">
 
     <div class="col">
       Country:
       <select class="form-control" (change)="onChangeCountry($event.target.value)">
-          
+          <option value="?">-----------------Select Country---------------</option>
           <option *ngFor="let country of countryList; let i = index" value="{{i}}">{{country.CountryName}}</option>
   </select> 
     </div>
@@ -13,7 +13,7 @@
     <div class="col">
       State:
       <select name="state" id="state"class='form-control' (change)="onChangeState($event.target.value)">
-          <option *ngIf="stateInfo== ''" value ="-1">Select State</option>
+          <option value="?">-------------------Select State------------------</option>
         <option *ngFor="let state of stateList; let j = index" value="{{j}}">{{state.StateName}}</option>
       </select>
   
@@ -22,7 +22,7 @@
     <div class="col">
       City:
       <select name="city" id="city"class='form-control'>
-        <option *ngIf="cityInfo== ''" value ="-1">Select City</option>
+        <option value ="?">------------------Select City----------------</option>
         <option *ngFor="let city of cityList; let k = index" value="{{k}}">{{city}}</option>
       </select>
   
@@ -32,7 +32,7 @@
 </form>
 </div>
 
-<p>Custom rating template provided as child element</p>
+<hr>
 
 <ngb-rating [(rate)]="currentRate">
   <ng-template let-fill="fill" let-index="index">
@@ -41,7 +41,16 @@
 </ngb-rating>
 <pre>Rate: <b>{{currentRate}}</b></pre>
 
+ -->
 
 
+ <div class="form-group">
+  <input hidden type="file" #uploader
+  (change)="uploadFile($event)"/>
 
+  <button (click)="uploader.click()">
+    Upload
+   </button>
+
+</div>
 

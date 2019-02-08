@@ -13,8 +13,9 @@ import { PersonalInfoModule } from './personal-info/personal-info.module';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import {  HttpClientModule } from '@angular/common/http';
 
-import {CountriesService} from './countries.service';
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 
 @NgModule({
@@ -32,10 +33,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AngularFontAwesomeModule,
     PersonalInfoModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AngularFileUploaderModule
     
   ],
-  providers: [CountriesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

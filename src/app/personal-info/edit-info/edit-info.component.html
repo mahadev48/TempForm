@@ -44,7 +44,8 @@
     <div class="row form-group mt-5">
       <div class="col">
         <label for="country">Country/Region</label>
-        <select name="countrySelect" id="country" class="form-control" required [(ngModel)]="country" #tcountrySelect="ngModel" >
+        <select name="countrySelect" id="country" class="form-control"  [(ngModel)]="country" #tcountrySelect="ngModel" >
+          <option vlaue=" " >yolo</option>
           <option value="1" *ngFor="let country of user.country">{{country}}</option>
         </select>
         <span *ngIf="(tcountrySelect.touched && !tcountrySelect.valid) || (userform.submitted && !tcountrySelect.valid)" class="text-danger" style="font-size:12px;"> Need to select an option.
