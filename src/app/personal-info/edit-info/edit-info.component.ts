@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { EditFormService } from '../services/edit-form.service';
 import { Observable } from 'rxjs';
 import { CountriesService } from '../services/countries.service';
-import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+
 
 const URL = 'http://localhost:3000/api/upload';
 
@@ -29,63 +29,64 @@ export class EditInfoComponent implements OnInit {
   countryList:any[]=[];
   stateList :any[]=[];
   cityList :any[] = [];
-
   editData = {};
 
   constructor(private editFormService: EditFormService,
-              private country: CountriesService) { }
+    private country: CountriesService) { }
 
-public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
 
+    
   ngOnInit() {
     this.getCountry();
-
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log('ImageUpload:uploaded:', item, status, response);
-        alert('File uploaded successfully');
-     };
-
+    
   }
 
-  createEditInfoDetails(userform: NgForm){
+  createEditInfoDetails(userform: NgForm) {
     this.editData = userform.value;
     console.log(userform.value);
     this.editFormService.createEditIntro(this.editData).subscribe(
-    res => {
-      console.log(res)
+      res => {
+        console.log(res)
       },
-    err => console.log(err)
-    );    
+      err => console.log(err)
+    );
   }
 
-  getCountry(){
+  getCountry() {
     this.country.allCountries().
-    subscribe(
-      data2 => {
-        this.countryList = data2.Countries;
-        // console.log('Data:', this.countryList);
-      }
-    )
+      subscribe(
+        data2 => {
+          this.countryList = data2.Countries;
+          // console.log('Data:', this.countryList);
+        }
+      )
   }
 
-  onChangeCountry(countryIndex){
-    this.stateList=this.countryList[countryIndex].States;
-    this.cityList=this.stateList[0].Cities;
+  onChangeCountry(countryIndex) {
+    this.stateList = this.countryList[countryIndex].States;
+    this.cityList = this.stateList[0].Cities;
     // console.log('stateList:', this.stateList[0].StateName);
     // console.log('cityList:', this.cityList);
-    this.user.country = this.countryList[countryIndex].CountryName;
-      console.log(this.user.country);
+    // console.log(this.user.state);
+
   }
 
 
-  onChangeState(stateIndex){
-  this.cityList=this.stateList[stateIndex].Cities;
-  console.log('cityList:', this.cityList);
-  this.user.state = this.stateList[stateIndex].StateName;
-    console.log(this.user.state);
+  onChangeState(stateIndex) {
+    this.cityList = this.stateList[stateIndex].Cities;
+    // console.log('cityList:', this.cityList);
+
   }
 
+  onFileChanged(fileEvent) {
+    const file= fileEvent.target.files[0] ;
+    // console.log(file.name)
+    if(file.name.slice(-3) !='.pdf' && file.size > '1000000)')
+    {
+      alert('folder should be a PDF and not more then 1mb ')
+    };
+  }
+  
 
 
 }

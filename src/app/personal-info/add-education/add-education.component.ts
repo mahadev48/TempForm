@@ -40,4 +40,12 @@ export class AddEducationComponent implements OnInit {
 	  		});
 	  }
 
+	  onFileChanged(fileEvent) {
+		const file= fileEvent.target.files[0] ;
+		// console.log(file.name)
+		if(file.name.slice(-3) !='.pdf' && file.size > '1000000)')
+		{
+		  alert('folder should be a PDF and not more then 1mb ')
+		};
+	  }
 }

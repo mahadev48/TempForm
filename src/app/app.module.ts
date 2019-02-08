@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,8 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFontAwesomeModule,
     PersonalInfoModule,
     HttpClientModule,
-    NgbModule
-    
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
