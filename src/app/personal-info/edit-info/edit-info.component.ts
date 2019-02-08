@@ -14,22 +14,21 @@ const URL = 'http://localhost:3000/api/upload';
 })
 export class EditInfoComponent implements OnInit {
 
-  user = {
-    'firstName': '',
-    'lastName': '',
-    'headLine': '',
-    'educationList': ['BE', 'B.TECH'],
-    'country': '',
-    'state': '',
-    'cities': '',
-    'industry': '',
-    'contactInfo': '',
-    'summary': ''
-  };
-  countryList: any[] = [];
-  stateList: any[] = [];
-  cityList: any[] = [];
-
+  user = { 
+           'firstName': '',
+           'lastName': '',
+           'headLine': '',
+           'educationList':'',
+           'country':'',
+           'state':'', 
+           'cities':'',
+           'industry':'',
+           'contactInfo': '', 
+           'summary':''
+        };
+  countryList:any[]=[];
+  stateList :any[]=[];
+  cityList :any[] = [];
   editData = {};
 
   constructor(private editFormService: EditFormService,

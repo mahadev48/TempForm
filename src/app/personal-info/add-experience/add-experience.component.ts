@@ -13,9 +13,9 @@ export class AddExperienceComponent implements OnInit {
   experience = {
                 'title':'',
                 'role': '',
-                'location':['bangalore', 'chennai', 'mumbai'],
-                'month': ['jan', 'feb', 'March', 'april'],
-                'years': ['2000','2001', '2002', '2003', '2004'],
+                'location':'',
+                'month':'',
+                'years':'',
                 'headline':'',
                 'description':''
                 };

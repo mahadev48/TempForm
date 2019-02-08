@@ -20,13 +20,13 @@ export class SkillsComponent implements OnInit {
   }
   onSubmit(skillsForm: NgForm){
   	this.skillData = skillsForm.value;
-    // console.log(skillsForm.value);
+    console.log(skillsForm.value);
     this.skillService.skillsCreate(this.skillData).subscribe(
       res =>{
-        // console.log(res);
+        console.log(res);
       },
       err =>{
-        // console.log(err);
+        console.log(err);
       });
   }
 

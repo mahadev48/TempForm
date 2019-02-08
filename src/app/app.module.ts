@@ -13,8 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +23,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PersonalInfoModule,
     HttpClientModule,
     NgbModule,
-    
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
