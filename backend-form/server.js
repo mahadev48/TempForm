@@ -3,9 +3,30 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 
+/*File Upload*/
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
+const router = express.Router();
+
+const DIR = './uploads';
+
+let storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, DIR);
+	},
+	filename: (req, file, cb) => {
+		cb(null, file.filename + '_' + Date.now() + '.' + path.extname(file.originalname));
+	}
+});
+let upload = multer({storage: storage});
+/* ./File Upload*/
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 app.use(cors())
+
+
 
 //Configuring the database
 const dbConfig = require('./config/database.config.js');
@@ -22,6 +43,27 @@ mongoose.connect(dbConfig.url, {
 	console.log('Could not connect to the database. Exiting now..', err);
 	process.exit();
 });
+
+/*File Upload*/
+
+app.get('/api', function(req, res){
+	res.end('file catcher example');
+});
+app.post('/api/upload',upload.single('photo'), function (req, res) {
+    if (!req.file) {
+        console.log("No file received");
+        return res.send({
+          success: false
+        });
+    
+      } else {
+        console.log('file received');
+        return res.send({
+          success: true
+        })
+      }
+});
+/* ./File Upload*/
 
 app.get('/', (req,res) => {
 	res.json({"Message": "This is my Form application"});

@@ -20,7 +20,7 @@ export class AddExperienceComponent implements OnInit {
                 'description':''
                 };
                 
-  experienceData = {}              
+  experienceData = {};
 
   constructor(private experienceService: ExperienceService ) { }
 
