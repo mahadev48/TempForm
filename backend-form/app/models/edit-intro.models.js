@@ -6,7 +6,7 @@ const formsSchema = mongoose.Schema({
 					educationList: String,
 					country: String,
 					state: String,
-					cities: String,
+					cityList: String,
 					industry: String,
 					contactInfo: String,
 					summary: String

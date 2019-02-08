@@ -10,7 +10,7 @@ exports.create = (req, res) => {
 		educationList: req.body.educationList || "Untitled educationList",
 		country: req.body.country || "Untitled country",
 		state: req.body.state || "Untitled state",
-		cities: req.body.cities || "Untitled cities",
+		cityList: req.body.cityList || "Untitled cityList",
         industry: req.body.industry || "Untitled industry",
 		contactInfo: req.body.contactInfo || "Untitled contactInfo",
 	    summary: req.body.summary || "Untitled summary"   
