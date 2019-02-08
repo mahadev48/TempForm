@@ -8,13 +8,13 @@ import { projection } from '@angular/core/src/render3';
 import { PersonalInfoModule } from './personal-info/personal-info.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DropdownComponent} from './dropdown/dropdown.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownComponent
+    
   ],
   imports: [
     BrowserModule,
