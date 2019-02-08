@@ -68,7 +68,7 @@ export class EditInfoComponent implements OnInit {
     this.cityList = this.stateList[0].Cities;
     // console.log('stateList:', this.stateList[0].StateName);
     // console.log('cityList:', this.cityList);
-    console.log(this.user.state);
+    // console.log(this.user.state);
 
   }
 
@@ -79,6 +79,14 @@ export class EditInfoComponent implements OnInit {
 
   }
 
+  onFileChanged(fileEvent) {
+    const file= fileEvent.target.files[0] ;
+    // console.log(file.name)
+    if(file.name.slice(-3) !='.pdf' && file.size > '1000000)')
+    {
+      alert('folder should be a PDF and not more then 1mb ')
+    };
+  }
   
 
 

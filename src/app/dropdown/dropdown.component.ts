@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountriesService } from '../services/countries.service';
+import { CountriesService } from '../personal-info/services/countries.service';
 
 @Component({
   selector: 'app-dropdown',
@@ -8,10 +8,10 @@ import { CountriesService } from '../services/countries.service';
 })
 export class DropdownComponent implements OnInit {
 
-  countryList:any[]=[];
-  stateList :any[]=[];
-  cityList :any[] = [];
-   // currentRate = 6;
+  countryList=[];
+  stateList =[];
+  cityList = [];
+   currentRate = 6;
   constructor( private country : CountriesService) { }
 
   ngOnInit() {
@@ -49,7 +49,7 @@ export class DropdownComponent implements OnInit {
     if(file.name.slice(-3) !='.pdf' && file.size > '1000000)')
     {
       alert('folder should be a PDF and not more then 1mb ')
-    }
-;}
+    };
+  }
 
 }

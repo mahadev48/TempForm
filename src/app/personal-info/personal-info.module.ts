@@ -20,9 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionAnswerComponent } from './question-answer/question-answer.component';
 import { EditFormService } from './services/edit-form.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { DropdownComponent } from './dropdown/dropdown.component';
+
 import { CountriesService } from './services/countries.service';
-// import { FileSelectDirective } from 'ng2-file-upload';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -48,7 +48,7 @@ import { CountriesService } from './services/countries.service';
     LanguageComponent,
     HonorsComponent,
     QuestionAnswerComponent,
-    DropdownComponent
+    
     
   ],
   providers: [EditFormService, CountriesService],

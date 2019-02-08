@@ -1,4 +1,4 @@
-<!-- <div class="container">
+ <div class="container"> 
 <form>
   <div class="row mt-5">
 
@@ -12,7 +12,7 @@
     <div class="col">
       State:
       <select name="state" id="state"class='form-control' (change)="onChangeState($event.target.value)">
-          <option *ngIf="stateList== ''" value ="-1">Select State</option>
+          <option *ngIf="stateList == ['']" value ="-1">Select State</option>
         <option *ngFor="let state of stateList; let j = index" value="{{j}}">{{state.StateName}}</option>
       </select>
   
@@ -21,7 +21,7 @@
     <div class="col">
       City:
       <select name="city" id="city"class='form-control'>
-        <option *ngIf="cityList== ''" value ="-1">Select City</option>
+        <option *ngIf="cityList== ['']" value ="-1">Select City</option>
         <option *ngFor="let city of cityList; let k = index" value="{{k}}">{{city}}</option>
       </select>
   
@@ -31,14 +31,13 @@
 </form>
 </div>
 
- <p>Custom rating template provided as child element</p>
 
-<ngb-rating [(rate)]="currentRate">
+<<ngb-rating [(rate)]="currentRate">
   <ng-template let-fill="fill" let-index="index">
     <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
   </ng-template>
 </ngb-rating>
-<pre>Rate: <b>{{currentRate}}</b></pre> -->
-
+<hr>
+<pre>Rate: <b>{{currentRate}}</b></pre>
  
 

@@ -14,18 +14,28 @@ export class SkillsComponent implements OnInit {
 
   	addSkills: '';
     skillData = {};
+    skills=[];
 
   ngOnInit() {
   }
   onSubmit(skillsForm: NgForm){
   	this.skillData = skillsForm.value;
-    console.log(skillsForm.value);
+    // console.log(skillsForm.value);
     this.skillService.skillsCreate(this.skillData).subscribe(
       res =>{
-        console.log(res);
+        // console.log(res);
       },
       err =>{
-        console.log(err);
+        // console.log(err);
       });
+  }
+
+  // adding skilles to form 
+  onKeydown(event) {
+    if (event.key === "Enter") {
+      // console.log(event);
+      this.skills.push(event.target.value);
+      console.log(this.skills);
+    }
   }
 }
