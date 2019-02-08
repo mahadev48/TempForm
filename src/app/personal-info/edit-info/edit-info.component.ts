@@ -18,11 +18,11 @@ export class EditInfoComponent implements OnInit {
            'firstName': '',
            'lastName': '',
            'headLine': '',
-           'educationList':['BE', 'B.TECH'],
+           'educationList':'',
            'country':'',
            'state':'', 
-           'cities':['Bangalore', 'milpitas'],
-           'industry':['amination', 'developer'],
+           'cities':'',
+           'industry':'',
            'contactInfo': '', 
            'summary':''
         };
