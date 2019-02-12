@@ -21,6 +21,7 @@ import { QuestionAnswerComponent } from './question-answer/question-answer.compo
 import { EditFormService } from './services/edit-form.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CountriesService } from './services/countries.service';
+import { ProfileMainComponent } from './profile-main/profile-main.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { CountriesService } from './services/countries.service';
     LanguageComponent,
     HonorsComponent,
     QuestionAnswerComponent,
+    ProfileMainComponent
     
     
   ],

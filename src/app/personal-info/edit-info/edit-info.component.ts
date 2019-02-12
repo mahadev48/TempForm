@@ -65,16 +65,12 @@ export class EditInfoComponent implements OnInit {
   onChangeCountry(countryIndex) {
     this.stateList = this.countryList[countryIndex].States;
     this.cityList = this.stateList[0].Cities;
-    // console.log('stateList:', this.stateList[0].StateName);
-    // console.log('cityList:', this.cityList);
-    // console.log(this.user.state);
-
   }
 
 
   onChangeState(stateIndex) {
     this.cityList = this.stateList[stateIndex].Cities;
-    // console.log('cityList:', this.cityList);
+    
 
   }
 
