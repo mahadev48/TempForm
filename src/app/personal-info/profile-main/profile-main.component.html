@@ -1,8 +1,39 @@
-<div class="container-fluid ">
+<div class="container mt-5">
   <form>
+
     <!-- first card with image -->
-    <div class="card mb-4">
+    <div class="card mb-4 w-100 cardOne">
       <img class="card-img-top" id="cover" src="../../../assets/img/index.png" alt="Card image cap">
+
+
+      <!-- menu button start -->
+      <div class="dropdown dropMenu">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Add profile section
+        </button>
+        <div class="dropdown-menu "  aria-labelledby="dropdownMenuButton" (click)="$event.hide.bs.dropdown()" >
+          <a class="dropdown-item" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" >Into <span class="fa fa-angle-down" style=" float:right; font-size:20px;"></span></a>
+          <div class="testCard collapse" id="multiCollapseExample1">
+              <h1>you got me</h1>
+        </div>
+        <div class="dropdown-divider"></div>
+          <a class="dropdown-item" >Background <span class="fa fa-angle-down" style=" float:right; font-size:20px;"></span></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" >Skill <span class="fa fa-angle-down" style=" float:right; font-size:20px;"></span></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" >Accomplishments <span class="fa fa-angle-down" style=" float:right; font-size:20px;"></span></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" >Additional Information <span class="fa fa-angle-down" style=" float:right; font-size:20px;"></span></a>
+
+        </div>
+        
+
+      </div>
+      <!-- menu button end -->
+      <button class="btn btn-primary " id="buttonTwo">Import from linkedin</button>
+      <button class="btn btn-primary" id="buttonThree">Upload CV</button>
+
       <img id="profile" src="../../../assets/img/f0949.jpg">
       <div class="card-body mt-5">
         <div class="row justify-content-between">
@@ -12,9 +43,11 @@
             <h4>Location</h4>
           </div>
 
-          <div class="col-4 mt-4">
+          <div class="col-4 mt-4 w-100">
             <h4>Digikore College of animation</h4>
+            <br>
             <h4>See contct info</h4>
+            <br>
             <h4>See mail</h4>
           </div>
         </div>
@@ -23,19 +56,18 @@
     <!-- 2nd card  -->
 
     <div class="form-group">
-    <div class="card w-100 mt-3 ">
+      <div class="card mt-3  w-100">
         <div class="card-body">
           <h5 class="card-title">Summary</h5>
-          
-            <ul>
-              <li>Expertise in Technical / Industrial Animation and building visualization.</li>
-              <li> Providing cost effective promotional tools to Industrial and architectural sector.</li>
-              <li> worked for walkthroughs, interior design, exterior design, and also Pneumatic, Oil Filtration,
-                Storage Systems, Material Handling, Air Filtration, Paint Booths, Automation and many other industries
-                like
-                centrifugal pump and Compressor.</li>
-            </ul>
-            <p class="card-text">
+
+
+          <p class="card-text">
+            <li>Expertise in Technical / Industrial Animation and building visualization.</li>
+            <li> Providing cost effective promotional tools to Industrial and architectural sector.</li>
+            <li> worked for walkthroughs, interior design, exterior design, and also Pneumatic, Oil Filtration,
+              Storage Systems, Material Handling, Air Filtration, Paint Booths, Automation and many other industries
+              like
+              centrifugal pump and Compressor.</li>
             Creosma Animation is a knowledge base company that offers innovative solutions to significantly add value
             in product presentation & company presentation.
             Creosma is expertise in technical 3D animation such as Storage Systems, Paint booth , conveyor belt,
@@ -44,17 +76,48 @@
             It helps customer to understand process/work flow of product without going to workplace.
             Creosma also provide innovative presentations required for board meetings, summits, product
           </p>
-  
+
         </div>
       </div>
     </div>
     <!-- 3rd card -->
-<div class="form-group">
-    <div class="card w-100 mt-3">
+    <div class="form-group">
+      <div class="card  mt-3 w-100">
         <div class="card-body">
-          <h5 class="card-title">Education:</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-  
+          <h5 class="card-title">Education<i class="fa fa-plus plus"></i></h5>
+
+
+          <div class="row justify-content-start mt-5">
+            <div class="col-1">
+              <i class="fa fa-briefcase fa-3x"></i>
+            </div>
+            <div class="col-10">
+              <h6>Digikore collage of animation</h6>
+              <h6>
+                <font size="2">2010 - 2011</font>
+              </h6>
+            </div>
+            <div class="col-1 align-self-start">
+              <i class="fa fa-pencil" id='penicon'></i>
+            </div>
+          </div>
+
+          <div class="row justify-content-start mt-5 mb-3">
+
+            <div class="col-1">
+              <span class="fa fa-briefcase fa-3x"></span>
+            </div>
+            <div class="col-10">
+              <h6>Digikore collage of animation</h6>
+              <h6>
+                <font size="2">2010 - 2011</font>
+              </h6>
+            </div>
+            <div class="col-1 align-self-start">
+              <i class="fa fa-pencil" id='penicon'></i>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -62,37 +125,156 @@
     <!-- 4th card -->
 
     <div class="form-group">
-        <div class="card w-100 mt-3">
-            <div class="card-body">
-              <h5 class="card-title">Licenses & Certifications:</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      
+      <div class="card  mt-3 w-100">
+        <div class="card-body">
+          <h5 class="card-title">Licenses & Certifications <i class="fa fa-plus plus"></i></h5>
+          <div class="row justify-content-start mt-5">
+            <div class="col-1">
+              <i class="fa fa-briefcase fa-3x"></i>
+            </div>
+            <div class="col-10">
+              <h6>
+                <font size="4">Digikore collage of animation</font>
+              </h6>
+              <h6>
+                <font size="2">2010 - 2011</font>
+              </h6>
+            </div>
+            <div class="col-1 align-self-start">
+              <i class="fa fa-pencil" id='penicon'></i>
             </div>
           </div>
-    
+
         </div>
+      </div>
+
+    </div>
     <!-- 5th card -->
     <div class="form-group">
-        <div class="card w-100 mt-3">
-            <div class="card-body">
-              <h5 class="card-title">Skills:</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      
+      <div class="card  mt-3 w-100">
+        <div class="card-body">
+          <h5 class="card-title">Skills <i class="fa fa-pencil plus"></i></h5>
+
+          <h6> <b>Photoshop </b></h6>
+          <hr>
+          <h6> <b>Autodesk Maya </b></h6>
+          <hr>
+        </div>
+      </div>
+
+    </div>
+    <!-- 6th card -->
+    <div class="form-group">
+      <div class="card  mt-3 w-100">
+        <div class="card-body">
+          <h5 class="card-title">Experience <i class="fa fa-plus plus"></i></h5>
+          <div class="row justify-content-start mt-5 mb-3">
+
+            <div class="col-1">
+              <span class="fa fa-print fa-3x"></span>
+            </div>
+            <div class="col-10">
+              <h6>
+                <font size="4">Animation Faculty</font>
+              </h6>
+              <h6>
+                <font size="4">Digikore collage of animation</font>
+              </h6>
+              <h6>
+                <font size="2">2010 - 2011</font>
+              </h6>
+              <h6>
+                <font size="2">Pune, Maharashtra</font>
+              </h6>
+            </div>
+            <div class="col-1 align-self-start">
+              <i class="fa fa-pencil" id='penicon'></i>
+            </div>
+
+          </div>
+          <hr>
+          <div class="row justify-content-start mt-5 mb-3">
+
+            <div class="col-1">
+              <span class="fa fa-print fa-3x"></span>
+            </div>
+            <div class="col-10">
+              <h6>
+                <font size="4">Animation Faculty</font>
+              </h6>
+              <h6>
+                <font size="4">Digikore collage of animation</font>
+              </h6>
+              <h6>
+                <font size="2">2010 - 2011</font>
+              </h6>
+              <h6>
+                <font size="2">Pune, Maharashtra</font>
+              </h6>
+            </div>
+            <div class="col-1 align-self-start">
+              <i class="fa fa-pencil" id='penicon'></i>
             </div>
           </div>
-    
         </div>
-        <!-- 6th card -->
-        <div class="form-group">
-            <div class="card w-100 mt-3">
-                <div class="card-body">
-                  <h5 class="card-title">Experience:</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          
-                </div>
-              </div>
-        
+      </div>
+
+    </div>
+
+    <!-- 7th card -->
+
+    <div class="form-group">
+      <div class="card  mt-3 w-100">
+        <div class="card-body">
+          <h5 class="card-title">Achivement <i class="fa fa-pencil plus"></i></h5>
+          <h6>
+            <font size="3">Languages</font>
+          </h6>
+
+          <h6>
+            <font size="3">Projects</font>
+          </h6>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 8th card -->
+
+    <div class="form-group">
+      <div class="card  mt-3 w-100">
+        <div class="card-body">
+          <h5 class="card-title">Volunteer Experience <i class="fa fa-plus plus"></i></h5>
+          <div class="row justify-content-start mt-5">
+            <div class="col-1">
+              <i class="fa fa-briefcase fa-3x"></i>
             </div>
+            <div class="col">
+
+              <h6>
+                <font size="4">Voluenteer Title</font>
+                <i class="fa fa-pencil plus"></i>
+              </h6>
+              <h6>
+                <font size="3">Organization Name</font>
+              </h6>
+              <h6>
+                <font size="2">2017-2018</font>
+              </h6>
+
+              <br>
+              <p style="color:gray;"> I was an active volunteer at organisation where I got the opportunity to teach
+                underprivileged kids and took part in other social activity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
 
   </form>
 </div>

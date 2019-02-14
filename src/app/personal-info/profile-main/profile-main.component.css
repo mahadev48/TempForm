@@ -2,7 +2,43 @@
     height:250px;
 }
 
+#penicon{
+  font-size: 20px;
+  color: #00BCD4;
+}
 
+.plus{
+  float:right; 
+  font-size:20px;
+  color: #00BCD4;
+}
+.cardOne{
+position: relative;
+}
+
+.dropMenu{
+  position: absolute;
+  top:30px;
+  left:40px;
+
+}
+
+#buttonTwo{
+position: absolute;
+top:75px;
+  left:40px;
+}
+
+#buttonThree{
+
+  position: absolute;
+  top:120px;
+  left:40px;
+}
+.dropdown-menu{
+  width:250px ;
+  
+}
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
