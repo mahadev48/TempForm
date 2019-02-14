@@ -1,0 +1,72 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#honorsmodal">
+    Add Honors
+   </button>-->
+   <div class="modal fade" id="honorsmodal" tabindex="-1" role="dialog" aria-labelledby="honorsmodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Honors &  Awards</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+<div class= "modal-body">
+    <form #honorsform="ngForm" novalidate (ngSubmit)="onSubmit(honorsform)">
+        
+        <div class="form-group">
+          <label for="title" class="mt-4">Title</label>
+          <input type="text" class="form-control" id="title" name="title" required #ttitle='ngModel' [(ngModel)]="honors.title" />
+          <span *ngIf="(ttitle.touched && !ttitle.valid) || (honorsform.submitted && !ttitle.valid)"
+            class="text-danger" style="font-size:12px;"> Field can't be blank</span>
+        </div>
+        <div class="form-group">
+          <label for="associatedId" class="mt-2">Associated with</label>
+          <select class="dropdown-toggle" id="associatedId" name="associatedId" required #tassociatedId="ngModel"
+            [(ngModel)]="honors.associatedId">
+            <option class="dropdown-item">Microsoft</option>
+          </select>
+ <span *ngIf="(tassociatedId.touched && !tassociatedId.valid)|| (honorsform.submitted && !tassociatedId.valid)"
+            class="text-danger" style="font-size:12px;">Field can't be blank</span>
+        </div>
+        <div class="form-group">
+          <label for="issuer" class="mt-2">Issuer</label>
+          <input type="text" class="form-control" id="issuer" name="issuer" required #tissuer="ngModel" [(ngModel)]="honors.issuer" />
+ <span *ngIf="(tissuer.touched && !tissuer.valid) || (honorsform.submitted && !tissuer.valid)"
+            class="text-danger" style="font-size:12px;">Field can't be blank</span>
+        </div>
+        <div class="row">
+          <div class="col">
+            <select class="form-control" id="monthSelect" name="monthSelect" required #tmonthSelect="ngModel" [(ngModel)]="honors.monthSelect">
+              <option>Month</option>
+            </select>
+            <span *ngIf=" (tmonthSelect.touched && !tmonthSelect.valid ) || ( honorsform.submitted  && !tmonthSelect.valid)"
+              class="text-danger" style="font-size:12px;">
+              Field can't be blank</span>
+          </div>
+          <div class="col">
+            <select class="form-control" id="yearSelect" name="yearSelect" required #tyearSelect="ngModel" [(ngModel)]="honors.yearSelect" placeholder="Year">
+              <option>Year</option>
+            </select>
+  <span *ngIf="(tyearSelect.touched && !tyearSelect.valid)||(honorsform.submitted && !tyearSelect.valid)"  class="text-danger" style="font-size:12px;">
+                  Field can't be blank</span>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="descriptionBox" class="mt-2">Description</label>
+        <textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="honors.descriptionBox"></textarea>
+ <span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid)||(honorsform.submitted && !tdescriptionBox.valid)"class="text-danger" style="font-size:12px;">
+              Field can't be blank</span>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+      </form>
+                 
+                
+   </div>
+  </div>
+ </div>
+</div>
+

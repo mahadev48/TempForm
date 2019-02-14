@@ -1,0 +1,251 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#questionmodal">
+      Question & Answer
+   </button>-->
+   <div class="modal fade" id="questionmodal" tabindex="-1" role="dialog" aria-labelledby="questionmodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Question & Answer</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+  <div class= "modal-body">
+      <form class="form-group">
+          <h4>How are you feeling about your career to date?</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Lost, frustrated, overwhelmed
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+              Have some ideas, needs a lot more direction and guidance
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">Know the industry I want to be in but not sure where to go or how to get starter
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+            <label class="form-check-label" for="exampleRadios4">I know exactly what I want!
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="others" class="mt-2">Others</label>
+            <textarea type="text" class="form-control" id="others"></textarea>
+          </div>
+      
+          <h4 class="mt-5">Are you currently working?</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="studentId" value="option1" checked>
+            <label class="form-check-label" for="studentId">I am student
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="career" value="option2">
+            <label class="form-check-label" for="career">
+              In career transition
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="internId" value="option2">
+            <label class="form-check-label" for="internId">
+              I am an intern
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="employeeId" value="option2">
+            <label class="form-check-label" for="employeeId">
+              I work for a company as a employee
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="independentId" value="option2">
+            <label class="form-check-label" for="independentId">
+              I work as an independent conractor
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="organizationId" value="option2">
+            <label class="form-check-label" for="organizationId">
+              I work as an non-profit organization
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="aspiringId" value="option2">
+            <label class="form-check-label" for="aspiringId">
+              I am an aspiring entrepreneur
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="emergingId" value="option2">
+            <label class="form-check-label" for="emergingId">
+              I am an emerging entrepreneur
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="currentWorking" id="workedId" value="option2">
+            <label class="form-check-label" for="workedId">
+              I have not yet worked
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="others" class="mt-2">Others</label>
+            <textarea type="text" class="form-control" id="others"></textarea>
+          </div>
+          <h4 class="mt-5">Which best describe your top 3 priorities?</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="prioritiesName" id="achievementId" value="option1" checked>
+            <label class="form-check-label" for="achievementId">Achievement</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="prioritiesName" id="advancementId" value="option2">
+            <label class="form-check-label" for="advancementId">
+              Advancement
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="prioritiesName" id="adventureId" value="option2">
+            <label class="form-check-label" for="adventureId">
+              Adventure
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="prioritiesName" id="cooperationId" value="option2">
+            <label class="form-check-label" for="cooperationId">
+             Co-operation
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="prioritiesName" id="creativityId" value="option2">
+            <label class="form-check-label" for="creativityId">
+             Creativity
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="others" class="mt-2">Others</label>
+            <textarea type="text" class="form-control" id="others"></textarea>
+          </div>
+          <h4 class="mt-5">How I define success has been most influenced by...</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="mySelfId" value="option1" checked>
+            <label class="form-check-label" for="mySelfId">Myself</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="partnerId" value="option2">
+            <label class="form-check-label" for="partnerId">
+              Spouse or partner
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="familyId" value="option2">
+            <label class="form-check-label" for="familyId">
+              Family
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="friendsId" value="option2">
+            <label class="form-check-label" for="friendsId">
+              Friends / Peers
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="businessId" value="option2">
+            <label class="form-check-label" for="businessId">
+              Business / Employer
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="newsId" value="option2">
+            <label class="form-check-label" for="newsId">
+              News / Media
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="researchId" value="option2">
+            <label class="form-check-label" for="researchId">
+              Research
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="EnviromentId" value="option2">
+            <label class="form-check-label" for="EnviromentId">
+              My Environment
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="cultureId" value="option2">
+            <label class="form-check-label" for="cultureId">
+              My Culture
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="genderId" value="option2">
+            <label class="form-check-label" for="genderId">
+              My Gender
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="religiousId" value="option2">
+            <label class="form-check-label" for="religiousId">
+             Religious or Spiritual belies
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="successName" id="iconId" value="option2">
+            <label class="form-check-label" for="iconId">
+             Icons or Celebrities
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="others" class="mt-2">Others</label>
+            <textarea type="text" class="form-control" id="others"></textarea>
+          </div>
+          <h4 class="mt-5">Which best describes your career to date?</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="describesName" id="describeId" value="option1" checked>
+            <label class="form-check-label" for="describeId">If I know what I was doing, I’d have one
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="describesName" id="careerId" value="option2">
+            <label class="form-check-label" for="careerId">
+              What career? Just getting started!
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="describesName" id="placeId" value="option2">
+            <label class="form-check-label" for="placeId">
+              All over the place, doing lots of different things
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="describesName" id="focusedId" value="option2">
+            <label class="form-check-label" for="focusedId">
+              Somewhat focused
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="describesName" id="goalId" value="option2">
+            <label class="form-check-label" for="goalId">
+              Actively building towards my goal
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="others" class="mt-2">Others</label>
+            <textarea type="text" class="form-control" id="others"></textarea>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  </div>
+   </div>

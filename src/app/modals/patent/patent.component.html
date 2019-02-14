@@ -1,0 +1,102 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#patentmodal">
+  Add Patent Details
+ </button>-->
+ <div class="modal fade" id="patentmodal" tabindex="-1" role="dialog" aria-labelledby="patentmodalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+              <div class="modal-header">
+                <h3 class=" text-primary">Edit Patent Details</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+<div class= "modal-body">
+  
+    <form #patentForm="ngForm" novalidate (ngSubmit)="onSubmit(patentForm)">
+        
+        <div class="form-group">
+          <label for="patentTitle" class="mt-4">Patent title</label>
+          <input type="text" class="form-control" id="patentTitle"  required [(ngModel)]="patent.patentTitle"
+            name="patentTitle" #tpatentTitle="ngModel" />
+          <span *ngIf="(tpatentTitle.touched && !tpatentTitle.valid) 
+                       || (patentForm.submitted && !tpatentTitle.valid)"
+            class="text-danger" style="font-size:12px;">
+            Field can't be blank</span>
+        </div>
+        <div class="form-group">
+          <label class="mt-2" for="patentOffice">Patent office</label>
+          <select class="dropdown-toggle form-control" id='patentOffice' name="patentOffice" required [(ngModel)]="patent.patentOffice"
+            name="patentOffice" #tpatentOffice="ngModel">
+            <option class="dropdown-item">yolo</option>
+          </select>
+    
+          <span *ngIf="(tpatentOffice.touched && !tpatentOffice.valid) 
+          || (patentForm.submitted && !tpatentOffice.valid)"
+            class="text-danger" style="font-size:12px;">
+            Field can't be blank</span>
+        </div>
+        <div class="form-group">
+          <label for="applicationNumber" class="mt-2">Patent or application number</label>
+        <input type="text" class="form-control" id="applicationNumber" name="applicationNumber"  required [(ngModel)]="patent.applicationNumber"
+         #tapplicationNumber="ngModel" />
+        <span *ngIf="(tapplicationNumber.touched && !tapplicationNumber.valid) 
+          || (patentForm.submitted && !tapplicationNumber.valid)"
+          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
+        </div>
+        <div class="form-group">
+          <label for="inventorName" class="mt-2">Inventor</label>
+          <input type="text" class="form-control mt-2 inventor" placeholder="Inventor name" id="inventorName" name="inventorName" required [(ngModel)]="patent.inventorName" #pPatent="ngModel"/>
+          <span *ngIf="(pPatent.touched && !pPatent.valid)||(patentForm.submitted && !pPatent.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+          <br/>
+          <hr/>
+          <p class="text-primary text-lg-right" style="font-size: 20px;">Add inventor</p>
+        </div>
+        <div class="form-group">
+          <label class="mt-2">Cause</label>
+          <div class="custom-control custom-radio form-group">
+            <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
+            <label class="custom-control-label" for="defaultChecked">Patent Pending</label>
+          </div>
+          <div class="custom-control custom-radio form-group">
+            <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+            <label class="custom-control-label" for="defaultUnchecked">Patent Issued</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="mt-2">Filing date</label><br />
+          <select class="selectId">
+            <option>Month</option>
+          </select>
+          <select class="selectId">
+            <option>Day</option>
+          </select>
+          <select class="selectId">
+            <option>Year</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="patentUrl" class="mt-2">Patent URL</label>
+          <input type="URL" class="form-control" id="patentUrl" name="patentUrl" required [(ngModel)]="patent.patentUrl" #pPatentUrl="ngModel"/>
+          <span *ngIf="(pPatentUrl.touched && !pPatentUrl.valid)||(patentForm.submitted && !pPatentUrl.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+        </div>
+        <div class="form-group">
+          <label for="description" class="mt-2">Description</label>
+        <textarea class="form-control" type="text" id="description" name="description"  required [(ngModel)]="patent.description"
+        #tdescription="ngModel"></textarea>
+        <span *ngIf="(tdescription.touched && !tdescription.valid) 
+          || (patentForm.submitted && !tdescription.valid)"
+          class="text-danger" style="font-size:12px;">
+          Field can't be blank</span>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+      </form>
+
+  </div>
+</div>
+</div>
+ </div>
+

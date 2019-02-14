@@ -9,10 +9,36 @@
         <button class="btn btn-dark">Upload CV</button>
       </div>
       
-       
+      <div class="btn-group-lg col-lg-4 mt-2 dropdown">
+        <button type="button" class="btn btn-primary float-md-right dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">Add profile section</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item"><strong>Intro</strong></a>
+           <div class="dropdown-divider"></div>
+          <a class="dropdown-item"><strong>Background</strong></a>
+          <a routerLink= "/experience " class="dropdown-item" data-toggle="modal" data-target="#experiencemodal">Work Experience</a>
+          <a routerLink= "/education "class="dropdown-item"  data-toggle="modal" data-target="#educationmodal">Education</a>
+          <a routerLink= " /license "class="dropdown-item" data-toggle="modal" data-target="#licensemodal" >Licenses & Certifications</a>
+          <a routerLink= " /volunteer "class="dropdown-item"  data-toggle="modal" data-target="#volunteermodal">Volunteer experience</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item"><strong>Skills</strong></a>
+          <a routerLink=" /skill "class="dropdown-item" data-toggle="modal" data-target="#skillmodal" >Skills on your profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" ><strong>Accomplishments</strong></a>
+          <a routerLink=" /publication" class="dropdown-item" data-toggle="modal" data-target="#publicationmodal">Publications</a>
+          <a routerLink=" /patent" class="dropdown-item"  data-toggle="modal" data-target="#patentmodal">Patents</a>
+          <a routerLink=" /course" class="dropdown-item" data-toggle="modal" data-target="#coursemodal">Courses</a>
+          <a routerLink="/project" class="dropdown-item" data-toggle="modal" data-target="#projectmodal">Projects</a>
+          <a routerLink="/honor" class="dropdown-item" data-toggle="modal" data-target="#honorsmodal">Honors & Awards</a>
+          <a routerLink= "/score"class="dropdown-item" data-toggle="modal" data-target="#scoremodal">Test Scores</a>
+          <a routerLink="/language" class="dropdown-item"data-toggle="modal" data-target="#languagemodal">Languages</a>
+          <a routerLink="/organisation" class="dropdown-item"data-toggle="modal" data-target="#organizationmodal">Organisations</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item"><strong>Additional Information</strong></a>
+        </div>
+      </div>  
     </div>
   </form>
-</div>
+</div> 
 
 
 <br>
@@ -21,8 +47,8 @@
 </div>
 <br>
 <br>
-
-<br>
+ 
+<!--<br>
 <br>
 <div>
   <app-edit-info></app-edit-info>
@@ -93,7 +119,5 @@
 </div>
 <br>
 <br>
-<app-question-answer></app-question-answer>
+<app-question-answer></app-question-answer>-->
 
-
- 

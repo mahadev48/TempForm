@@ -12,7 +12,7 @@
           aria-haspopup="true" aria-expanded="false">
           Add profile section
         </button>
-        <div class="dropdown-menu "  aria-labelledby="dropdownMenuButton" (click)="$event.hide.bs.dropdown()" >
+        <div class="dropdown-menu "  aria-labelledby="dropdownMenuButton" (click)="$event.hide.bs.dropdown()git " >
           <a class="dropdown-item" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" >Into <span class="fa fa-angle-down" style=" float:right; font-size:20px;"></span></a>
           <div class="testCard collapse" id="multiCollapseExample1">
               <h1>you got me</h1>
@@ -38,16 +38,14 @@
       <div class="card-body mt-5">
         <div class="row justify-content-between">
           <div class="col-4">
-            <h2 class="card-title">FirstName LastName </h2>
+            <h2 class="card-title">FirstName   LastName:           <i class="material-icons" style="font-size:36px" routerLink="/ info" data-toggle="modal" data-target="#infomodal" >mode_edit</i></h2>
             <h4>Job Description</h4>
             <h4>Location</h4>
           </div>
 
           <div class="col-4 mt-4 w-100">
             <h4>Digikore College of animation</h4>
-            <br>
-            <h4>See contct info</h4>
-            <br>
+            <h4>See contact info</h4>
             <h4>See mail</h4>
           </div>
         </div>

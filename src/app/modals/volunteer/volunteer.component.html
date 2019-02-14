@@ -1,0 +1,124 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#volunteermodal">
+    Add Volunteer & Experience
+   </button>-->
+   <div class="modal fade" id="volunteermodal" tabindex="-1" role="dialog" aria-labelledby="volunteermodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Volunteer & Experience Details</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+    <div class= "modal-body">
+        <form #experiencForm="ngForm" novalidate (ngSubmit)="onSubmit(experiencForm)">
+            <div class="form-group">
+              <label for="organi">Organization</label>
+              <input class="form-control" type="text" name="organi" id="organi"  required [(ngModel)]="experience.organi" #torgani="ngModel">
+        
+              <span *ngIf="(torgani.touched && !torgani.valid) 
+                           || (experiencForm.submitted && !torgani.valid)"
+                           class="text-danger" style="font-size:12px;">
+                           Field can't be blank</span>
+        
+            </div>
+        
+            <div class="form-group">
+              <label for="role">Role</label>
+              <input type="text" class="form-control" name="role" id="role" required [(ngModel)]="experience.role" #trole="ngModel">
+                
+              <span *ngIf="(trole.touched && !trole.valid) || (experiencForm.submitted && !trole.valid)" class="text-danger" style="font-size:12px;">
+                           Field can't be blank</span>
+        
+            </div>
+        
+        
+            <div class="form-group">
+              <label for="cause">Cause</label>
+              <select class="form-control" name="cause" id="cause" required
+                                                                  [(ngModel)]="experience.cause"
+                                                                  #tcause="ngModel">
+                <option >Teaching underprivileged kids</option>
+              </select>
+        
+              <span *ngIf="(tcause.touched && !tcause.valid) 
+                           || (experiencForm.submitted && !tcause.valid)"
+                           class="text-danger" style="font-size:12px;">
+                           Field can't be blank</span>
+        
+            </div>
+        
+            <div class="row">
+              <div class="col">
+                <label for="monthSelect">Start Data</label>
+                <select name="monthSelect" id="monthSelect" class="form-control"  name="monthSelect" required  #tmonthSelect="ngModel" [(ngModel)]="experience.monthSelect">
+                  <option value="1">Month</option>
+                  <option value="2">1</option>
+                </select>
+        
+                <span *ngIf="(tmonthSelect.touched && !tmonthSelect.valid) 
+                || (experiencForm.submitted && !tmonthSelect.valid)"
+                class="text-danger" style="font-size:12px;">
+                Field can't be blank</span>
+        
+              </div>
+              <div class="col">
+                <label for="monthSelect1">End Data</label>
+                <select name="monthSelect1" id="monthSelect1" class="form-control" name="monthSelect1" required                                      #tmonthSelect1="ngModel"          [(ngModel)]="experience.monthSelect1">
+                  <option value="1">month</option>
+                  <option value="2">1</option>
+                </select>
+        
+                <span *ngIf="(tmonthSelect1.touched && !tmonthSelect1.valid) 
+                           || (experiencForm.submitted && !tmonthSelect1.valid)"
+                           class="text-danger" style="font-size:12px;">
+                           Field can't be blank</span>
+        
+              </div>
+            </div>
+        
+            <div class="row mt-2">
+              <div class="col ">
+                <select name="yearSelect" id="yearSelect" class="form-control" name="yearSelect" required #yearSelect="ngModel" [(ngModel)]="experience.yearSelect">
+                  <option value="1">Year</option>
+                  <option value="2">1</option>
+                </select>
+        
+                <span *ngIf="(yearSelect.touched && !yearSelect.valid) || (experiencForm.submitted && !yearSelect.valid)"
+                                          class="text-danger" style="font-size:12px;">
+                                          Field can't be blank</span>
+        
+              </div>
+              <div class="col ">
+                <select name="yearSelect1" id="yearSelect1" class="form-control" name="yearSelect1" required #yearSelect1="ngModel" [(ngModel)]="experience.yearSelect1">
+                  <option >Year</option>
+                </select>
+                <span *ngIf="(yearSelect1.touched && !yearSelect1.valid) || (experiencForm.submitted && !yearSelect1.valid)"
+                                          class="text-danger" style="font-size:12px;">
+                                          Field can't be blank</span>
+              </div>
+            </div>
+        
+            <div class="form-check mt-4">
+              <input class="form-check-input" type="checkbox">
+              <label>I currently volunteer here</label>
+            </div>
+        
+            <div class="form-group">
+              <label for="descri">Description</label>
+              <textarea name="descri" id="descri" class="form-control" required #tdescri="ngModel" [(ngModel)]="experience.descri"></textarea>
+              <small class="text-muted">Ex. I raised funds for our annual charity 5K.</small><br/>
+              <span *ngIf="(tdescri.touched && !tdescri.valid) || (experiencForm.submitted && !tdescri.valid)"
+                                          class="text-danger" style="font-size:12px;">
+                                          Field can't be blank</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+          </form>           
+                
+   </div>
+  </div>
+ </div>
+</div>

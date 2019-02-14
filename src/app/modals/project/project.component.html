@@ -1,0 +1,110 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#projectmodal">
+    Add Project Details
+   </button>-->
+   <div class="modal fade" id="projectmodal" tabindex="-1" role="dialog" aria-labelledby="projectmodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Project Details</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+  <div class= "modal-body">
+  
+      <form #projectform="ngForm" novalidate (ngSubmit)="onSubmit(projectform)">
+          <h3>Add project</h3>
+          <div class="form-group">
+            <label for="projectName" class="mt-4">Project name</label>
+            <input type="text" class="form-control" id="projectName" name="projectName" required #tprojectName="ngModel" [(ngModel)]="project.projectName"/>
+            <span *ngIf="(tprojectName.touched && !tprojectName.valid) 
+                         || (projectform.submitted && !tprojectName.valid)"
+                         class="text-danger" style="font-size:12px;">
+                         Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="dates" class="mt-4">Dates</label>
+          </div>
+          <div class="row form-group">
+            <div class="col">
+              <label id="monthSelect" >Start date</label>
+              <select class="form-control" id="monthSelect" name="monthSelect" required #tmonthSelect="ngModel" [(ngModel)]="project.monthSelect">
+                <option>Month</option>
+              </select>
+              <span *ngIf="(tmonthSelect.touched && !tmonthSelect.valid) 
+                         || (projectform.submitted && !tmonthSelect.valid)"
+                         class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            </div>
+            <div class="col">
+              <label id="monthSelect1" >End date</label>
+              <select class="form-control" id="monthSelect1" name="monthSelect1" required #tmonthSelect1="ngModel" [(ngModel)]="project.monthSelect1">
+                <option>Month</option>
+              </select>
+              <span *ngIf="(tmonthSelect1.touched && !tmonthSelect1.valid) 
+                         || (projectform.submitted && !tmonthSelect1.valid)"
+                         class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            </div>
+          </div>
+      
+          <div class="row mt-2">
+            <div class="col">
+              <select class="form-control" id="yearSelect" name="yearSelect" required #tyearSelect="ngModel" [(ngModel)]="project.yearSelect">
+                <option>Year</option>
+              </select>
+              <span *ngIf="(tyearSelect.touched && !tyearSelect.valid) 
+                         || (projectform.submitted && !tyearSelect.valid)"
+                         class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            </div>
+            <div class="col">
+              <select class="form-control" id="yearSelect1" name="yearSelect1" required #tyearSelect1="ngModel" [(ngModel)]="project.yearSelect1">
+                <option>Year</option>
+              </select>
+              <span *ngIf="(tyearSelect1.touched && !tyearSelect1.valid) 
+                         || (projectform.submitted && !tyearSelect1.valid)"
+                         class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            </div>
+          </div>
+      
+              <div class="form-check mt-4">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Project ongoing</label>
+           </div>
+      
+              <div class="form-group mt-2">
+          <p class="text-primary text-lg-right">Switch to single date</p>
+          </div>
+          <div class="form-group">
+            <label for="creatorName" class="mt-2">Creator</label>
+            <input type="text" class="form-control mt-2 creator" placeholder="Creator name" id="creatorName" name="creatorName" required [(ngModel)]="project.creatorName" #tCreatorName="ngModel"/>
+            <span *ngIf="(tCreatorName.touched && !tCreatorName.valid)||(projectform.submitted && !tCreatorName.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            <br>
+            <hr/>
+            <p class="text-primary text-lg-right">Add Creator</p>
+          </div>
+          <div class="form-group">
+            <label class="mt-2">Associated with</label>
+            <select class="form-control" name="associatedWith" id="associatedWith" required #tassociatedWith="ngModel" [(ngModel)]="project.associatedWith">
+            <option class="dropdown-item">Microsoft</option>
+            </select>
+            <span *ngIf="(tassociatedWith.touched && !tassociatedWith.valid) || (projectform.submitted && !tassociatedWith.valid)"
+                         class="text-danger" style="font-size:12px;">Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="projectUrl" class="mt-2">Project URL</label>
+            <input type="URL" class="form-control" id="projectUrl" name="projectUrl" required [(ngModel)]="project.projectUrl" #tProjectUrl="ngModel"/>
+            <span *ngIf="(tProjectUrl.touched && !tProjectUrl.valid)||(projectform.submitted && !tProjectUrl.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="descriptionBox" class="mt-2">Description</label>
+            <textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="project.descriptionBox"></textarea>
+            <span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) || (projectform.submitted && !tdescriptionBox.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  </div>
+   </div>
