@@ -1,0 +1,61 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#publicationmodal">
+    Add Publication
+   </button>-->
+   <div class="modal fade" id="publicationmodal" tabindex="-1" role="dialog" aria-labelledby="publicationmodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Publication</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+  <div class= "modal-body">
+  
+      <form #ftitle="ngForm" (ngSubmit)="onSubmit(ftitle)">
+          
+          <div class="form-group">
+            <label for="title" class="mt-4">Title</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="publication.title" name="title" required #publication="ngModel" />
+            <small id="exampleId">Ex: Giving and receiving feedback</small><br/>
+            <span *ngIf="(!publication.valid && publication.touched) || (ftitle.submitted && !publication.valid)" class="text-danger"style="font-size:12px;">
+              Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="publication">Publication/Publisher</label>
+            <input type="text" class="form-control" id="publication" name="publication" required #pPublication="ngModel" [(ngModel)]="publication.publication"/>
+            <small id="exampleId">Ex: Harvard Business Review</small><br/>
+            <span *ngIf="(!pPublication.valid && pPublication.touched) || (ftitle.submitted && !pPublication.valid)" class="text-danger"style="font-size:12px;">
+              Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label class="mt-2">Publication date</label><br>
+            <select class="selectId">
+              <option>Month</option>
+            </select>
+            <select class="selectId" style="margin-left: 10px;">
+              <option>Day</option>
+            </select>	
+            <select class="selectId" style="margin-left: 10px;">
+              <option>Year</option>
+            </select>	
+          </div>
+          <div class="form-group">
+            <label for="publicationUrl" class="mt-2">Publication URL</label>
+            <input type="text" class="form-control" id="publicationUrl" name="publicationUrl" required [(ngModel)]="publication.publicationUrl" #pPublicationUrl="ngModel"/>
+            <span *ngIf="(pPublicationUrl.touched && !pPublicationUrl.valid)||(ftitle.submitted && !pPublicationUrl.valid)" class="text-danger" style="font-size:12px;">Field can't br blank</span>
+          </div>
+          <div class="form-group">
+            <label for="description" class="mt-2">Description</label>
+            <textarea type="text" class="form-control" name="description" id="description" required [(ngModel)]="publication.description" #pDescription="ngModel"></textarea>
+            <span *ngIf="(pDescription.touched && !pDescription.valid)||(ftitle.submitted && !pDescription.valid)" class="text-danger"style="font-size:12px;">Field can't be blank</span>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  </div>
+   </div>

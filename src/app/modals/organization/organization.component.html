@@ -1,0 +1,83 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#organizationmodal">
+    Add Organization Details
+   </button>-->
+   <div class="modal fade" id="organizationmodal" tabindex="-1" role="dialog" aria-labelledby="organizationmodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Organization Details</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+  <div class= "modal-body">
+      <form #organizationForm="ngForm" novalidate (ngSubmit)="onSubmit(organizationForm)">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input class="form-control" type="text" name="name" id="name" required #tname="ngModel" [(ngModel)]="organization.name">
+              <span *ngIf="(tname.touched && !tname.valid) || (organizationForm.submitted && !tname.valid)" class="text-danger" style="font-size:12px;">Name can't be blank</span>
+            </div>
+            <div class="form-group">
+              <label for="post">Position held</label>
+              <input class="form-control" type="text" name="post" id="post" required #tpost="ngModel" [(ngModel)]="organization.post" >
+              <span *ngIf="(tpost.touched && !tpost.valid) || (organizationForm.submitted && !tpost.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            </div>
+            <div class="form-group">
+              <label for="associat">Associated with</label>
+              <select class="dropdown-toggle form-control" name="associat" id="associat" required #tassociat="ngModel" [(ngModel)]="organization.associat">
+                <option class="dropdown-item">Java</option>
+              </select>
+              <span *ngIf="(tassociat.touched && !tassociat.valid) || (organizationForm.submitted && !tassociat.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                  <label for="monthSelect">From</label>
+                  <select name="monthSelect" id="monthSelect" class="form-control">
+                    <option value="1">Month</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="monthSelect1">To</label>
+                  <select name="monthSelect1" id="monthSelect1" class="form-control">
+                    <option value="1">Month</option>
+                  </select>
+                </div>
+            </div>
+              <div class="row mt-2">
+                <div class="col ">
+                  <select name="yearSelect" id="yearSelect" class="form-control">
+                    <option value="1">Year</option>
+                  </select>
+                </div>
+                <div class="col ">
+                  <select name="yearSelect1" id="yearSelect1" class="form-control">
+                    <option value="1">Year</option>
+                  </select>
+                </div>
+              </div>
+              <br>
+              <div class="form-check mt-2 mb-3" >
+                <input class="form-check-input" id="checkMember" type="checkbox" >
+                <label class="text-muted" for="checkMember">Mambership ongoing</label>
+              </div>
+              <div class="form-group">
+                <label for="descri">Description</label>
+                <textarea name="descri" id="descri" class="form-control" required #tdescri="ngModel" [(ngModel)]="organization.descri" ></textarea>
+                <span *ngIf="(tdescri.touched && !tdescri.valid) || (organizationForm.submitted && !tdescri.valid)" class="text-danger" style="font-size:12px;">Field can't be blank</span>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+          
+          </form>
+            
+
+
+  
+</div>
+ </div>
+ </div>
+  </div>
+

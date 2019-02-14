@@ -1,0 +1,67 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#scoremodal">
+    Score Details
+   </button>-->
+   <div class="modal fade" id="scoremodal" tabindex="-1" role="dialog" aria-labelledby="scoremodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Score Details</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+  <div class= "modal-body">
+  
+      <form #scoreform="ngForm" novalidate (ngSubmit)="onSubmit(scoreform)">
+         
+          <div class="form-group">
+            <label for="testName" class="mt-4">Test name</label>
+            <input type="text" class="form-control" name="testName" id="testName" required #ttestName="ngModel" [(ngModel)]="score.testName"/>
+            <span *ngIf="(ttestName.touched && !ttestName.valid)|| (scoreform.submitted && !ttestName.valid)"
+                 class="text-danger" style="font-size:12px;"> Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="associatedWith" class="mt-2">Associated with</label>
+            <select class="dropdown-toggle" id="associatedWith" name="associatedWith" required #tassociatedId="ngModel" [(ngModel)]="score.associatedWith">
+              <option class="dropdown-item">Microsoft</option>
+            </select>
+            <span *ngIf="(tassociatedId.touched && !tassociatedId.valid)  || (scoreform.submitted && !tassociatedId.valid)"
+                   class="text-danger" style="font-size:12px;"> Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="scoreBox" class="mt-2">Score </label>
+            <input type="text" class="form-control" id="scoreBox" name="scoreBox" required #tscoreBox="ngModel" [(ngModel)]="score.scoreBox"/>
+            <span *ngIf="(tscoreBox.touched && !tscoreBox.valid)  || (scoreform.submitted && !tscoreBox.valid)"
+                    class="text-danger" style="font-size:12px;">Field can't be blank</span>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="month">Test date</label>
+            <div class="row">
+              <div class="col col-3">
+                <select class="selectId form-control" id="month" name="month">
+                  <option>Month</option>
+                </select>
+              </div>
+              <div class="col col-3">
+                <select class="selectId form-control" id="year" name="year">
+                  <option>Year</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="descriptionBox" class="mt-2">Description</label>
+            <textarea type="text" class="form-control" id="descriptionBox" name="descriptionBox" required #tdescriptionBox="ngModel" [(ngModel)]="score.descriptionBox"></textarea>
+            <span *ngIf="(tdescriptionBox.touched && !tdescriptionBox.valid) || (scoreform.submitted && !tdescriptionBox.valid)"
+                   class="text-danger" style="font-size:12px;"> Field can't be blank</span>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  </div>
+   </div>

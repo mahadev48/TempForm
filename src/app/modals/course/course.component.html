@@ -1,0 +1,53 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#coursemodal">
+    Add Course Details
+   </button>-->
+   <div class="modal fade" id="coursemodal" tabindex="-1" role="dialog" aria-labelledby="coursemodalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class=" text-primary">Edit Course Details</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+   <div class= "modal-body">
+      <form #courseForm="ngForm" novalidate (ngSubmit)="onSubmit(courseForm)" >
+          <div class="form-group">
+            <label for="courseName" class="mt-4">Course name</label>
+            <input type="text" class="form-control" id="courseName" name="courseName" required 
+                                        #tcourseName="ngModel" 
+                                        [(ngModel)]="course.courseName"/>
+            <span *ngIf="(tcourseName.touched && !tcourseName.valid) 
+            || (courseForm.submitted && !tcourseName.valid)"
+            class="text-danger" style="font-size:12px;">
+            Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="numberId" class="mt-2">Number</label>
+            <input type="text" class="form-control" id="numberId"name="numberId" required [(ngModel)]="course.numberId" #tnumberId="ngModel"/>
+           <span *ngIf="(tnumberId.touched && !tnumberId.valid) 
+            || (courseForm.submitted && !tnumberId.valid)"
+            class="text-danger" style="font-size:12px;">
+            Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label for="associatedWith" class="mt-2">Associated with</label>
+            <select class="dropdown-toggle" id="associatedWith" required [(ngModel)]="course.associatedWith" name="associatedWith"  #tassociatedId="ngModel">
+              <option class="dropdown-item"></option>
+              <option>Microsoft</option>
+            </select>
+            <span *ngIf="(tassociatedId.touched && !tassociatedId.valid)|| (courseForm.submitted && !tassociatedId.valid)"
+            class="text-danger" style="font-size:12px;">
+            Field can't be blank</span>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>         
+                
+   </div>
+  </div>
+ </div>
+</div>
+

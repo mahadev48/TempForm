@@ -1,0 +1,46 @@
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#languagemodal">
+ Add Language
+</button>-->
+<div class="modal fade" id="languagemodal" tabindex="-1" role="dialog" aria-labelledby="languagemodalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class=" text-primary">Edit Language</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class= "modal-body">
+        
+        <form #langForm="ngForm" novalidate (ngSubmit)="onSubmit(langForm)">
+          <h3>Add language</h3>
+          <div class="form-group">
+            <label for="lang" class="mt-4">Language</label>
+            <input type="text" class="form-control" name="lang" id="lang" required #tlanguage="ngModel" [(ngModel)]="language.lang"/>
+            <span *ngIf="(tlanguage.touched && !tlanguage.valid) 
+            || (langForm.submitted && !tlanguage.valid)"
+                         class="text-danger" style="font-size:12px;">
+                         Field can't be blank</span>
+          </div>
+          <div class="form-group">
+            <label class="mt-2">Proficiency</label>
+            <select class="dropdown-toggle form-control" name="proficiency" id="proficiency" required #tproficiency="ngModel" [(ngModel)]="language.proficiency" >
+              <option class="dropdown-item">Java</option>
+            </select>
+            <span *ngIf="(tproficiency.touched && !tproficiency.valid) 
+            || (langForm.submitted && !tproficiency.valid)"
+                         class="text-danger" style="font-size:12px;">
+                         Field should selected</span>
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="saveBtn">Save changes</button>
+            </div>
+         
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
